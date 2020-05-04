@@ -1,5 +1,6 @@
 class Block{
 public:
+    Block();
     void RandBlock(); //随机生成方块
     void TurnBlock();//旋转方块：顺时针
 private:
