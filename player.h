@@ -9,6 +9,7 @@ public:
     rightMoveBlock();//右移方块
     moveDownBlock();//方块下落
     setColor();//设置颜色
+    getMap();//其它类获得map
 private:
     string name;//玩家名字
     int point;//得分
