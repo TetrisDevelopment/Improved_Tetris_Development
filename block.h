@@ -1,20 +1,26 @@
-class Block {
+class Block{
 public:
-    randBlock();//随机生成方块
-    turnBlock();//旋转方块：顺时针
-
-
-
+    void RandBlock(); //随机生成方块
+    void TurnBlock();//旋转方块：顺时针
 private:
-    int blockType_1[4][4]//方块类型
-    int blockType_2[4][4]//方块类型
-    int blockType_3[4][4]//方块类型
-    int blockType_4[4][4]//方块类型
-    int blockType_5[4][4]//方块类型
-    int blockType_6[4][4]//方块类型
-    int blockType_7[4][4]//方块类型
-    int blockType_8[4][4]//方块类型
-    int blockType_9[4][4]//方块类型
-    int blockType_10[4][4]//方块类型
-
+    int Choose_BlockType_form[10]; //记录每种方块分别有哪几种选择状态
+    int BlockType_1form_1[4][4]; // ----
+    int BlockType_1form_2[4][4]; //||||
+    int BlockType_2form_1[4][4]; // |___
+    int BlockType_2form_2[4][4]; // __||
+    int BlockType_2form_3[4][4]; // ---|
+    int BlockType_2form_4[4][4]; // |||-
+    int BlockType_3form_1[4][4]; // ___|
+    int BlockType_3form_2[4][4]; // --||
+    int BlockType_3form_3[4][4]; // ||--
+    int BlockType_3form_4[4][4]; // |||_
+    int BlockType_4form_1[4][4]; // _||_
+    int BlockType_4form_2[4][4]; // -|||
+    int BlockType_4form_3[4][4]; // __|_
+    int BlockType_4form_4[4][4]; // ||-|
+    int BlockType_5form_1[4][4]; // |+|
+    int BlockType_6form_1[4][4]; // _|-
+    int BlockType_6form_2[4][4]; // |-_
+    int BlockType_7form_1[4][4]; // -|_
+    int BlockType_7form_2[4][4]; // _-|
 };
