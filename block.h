@@ -2,7 +2,8 @@ class Block{
 public:
     Block();
     void RandBlock(); //随机生成方块
-    void TurnBlock();//旋转方块：顺时针
+    void TurnBlock();//旋转方块：逆时针
+    int block[4][4];//存储生成方块
 private:
     int Choose_BlockType_form[10]; //记录每种方块分别有哪几种选择状态
     int BlockType_1form_1[4][4]; // ----
