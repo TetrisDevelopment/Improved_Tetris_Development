@@ -1,12 +1,12 @@
 class Interface {
 public:
-    initialWindow();//åˆå§‹åŒ–çª—å£ï¼šè®¾ç½®å¥æŸ„ä»€ä¹ˆçš„
-    initialViewOnePlayer();//åˆå§‹åŒ–map
-    initialViewTwoPlayer();//åˆå§‹åŒ–map
-    drawBlock();//ç”»æ–¹å—ï¼šä¼ å…¥æ–¹å—çš„å·¦ä¸Šè§’åæ ‡å’Œæ–¹å—4*4æ•°ç»„æ¥å®ç°ç”»æ–¹å—,åªè¦æ²¡æœ‰ç¢°æ’ï¼Œæ–¹å—å°±å¯ä»¥ç”»
-    printPoint();//æ˜¾ç¤ºå½“å‰åˆ†æ•°
-    gotoXY();//å®šä½å…‰æ ‡
-    playerVictory();//ç©å®¶èƒœåˆ©æ•ˆæœ
+    initialWindow();//³õÊ¼»¯´°¿Ú£ºÉèÖÃ¾ä±úÊ²Ã´µÄ
+    initialViewOnePlayer();//³õÊ¼»¯map
+    initialViewTwoPlayer();//³õÊ¼»¯map
+    drawBlock();//»­·½¿é£º´«Èë·½¿éµÄ×óÉÏ½Ç×ø±êºÍ·½¿é4*4Êı×éÀ´ÊµÏÖ»­·½¿é,Ö»ÒªÃ»ÓĞÅö×²£¬·½¿é¾Í¿ÉÒÔ»­
+    printPoint();//ÏÔÊ¾µ±Ç°·ÖÊı
+    gotoXY();//¶¨Î»¹â±ê
+    playerVictory();//Íæ¼ÒÊ¤ÀûĞ§¹û
 private:
 
 };

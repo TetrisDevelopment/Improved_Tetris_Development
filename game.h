@@ -1,8 +1,8 @@
 class Game {
 public:
-    void select();//閫夋嫨妯″紡
-    void onePlayer();//鍗曚汉妯″紡
-    void twoPlayers();//鍙屼汉妯″紡
+    void select();//选择模式
+    void onePlayer();//单人模式
+    void twoPlayers();//双人模式
 
 private:
 };

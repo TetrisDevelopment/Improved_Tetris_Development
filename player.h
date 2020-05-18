@@ -2,25 +2,25 @@
 #include "block.h"
 class Player {
 public:
-    Player();//åˆå§‹åŒ–ç©å®¶
-    int getPoint();//è·å–ç©å®¶ç›®å‰åˆ†æ•°
-    void addBlock();//åº•éƒ¨éšæœºå¢åŠ ä¸€è¡Œå¸¦ç©ºæ ¼çš„
-    bool detectCollision(Block block, int x, int y);//æ£€æµ‹ç¢°æ’ï¼šåŒ…å«æ–¹å—å’Œæ–¹å—ï¼Œæ–¹å—å’Œè¾¹ç•Œ
-    void detectReductsion();//æ£€æµ‹æ¶ˆè¡Œï¼šè¦æœ‰åŠ åˆ†åŠŸèƒ½
-    void leftMoveBlock();//å·¦ç§»æ–¹å—
-    void rightMoveBlock();//å³ç§»æ–¹å—
-    void moveDownBlock();//æ–¹å—ä¸‹è½
-    void setColor();//è®¾ç½®é¢œè‰²
-    void getMap();//å…¶å®ƒç±»è·å¾—map
-    void setPlayerName(std::string name);//è®¾ç½®ç©å®¶åå­—
+    Player();//³õÊ¼»¯Íæ¼Ò
+    int getPoint();//»ñÈ¡Íæ¼ÒÄ¿Ç°·ÖÊı
+    void addBlock();//µ×²¿Ëæ»úÔö¼ÓÒ»ĞĞ´ø¿Õ¸ñµÄ
+    bool detectCollision(Block block, int x, int y);//¼ì²âÅö×²£º°üº¬·½¿éºÍ·½¿é£¬·½¿éºÍ±ß½ç
+    void detectReductsion();//¼ì²âÏûĞĞ£ºÒªÓĞ¼Ó·Ö¹¦ÄÜ
+    void leftMoveBlock();//×óÒÆ·½¿é
+    void rightMoveBlock();//ÓÒÒÆ·½¿é
+    void moveDownBlock();//·½¿éÏÂÂä
+    void setColor();//ÉèÖÃÑÕÉ«
+    void getMap();//ÆäËüÀà»ñµÃmap
+    void setPlayerName(std::string name);//ÉèÖÃÍæ¼ÒÃû×Ö
 private:
-    std::string name;//ç©å®¶åå­—
-    int point;//å¾—åˆ†
-    Block tempBlock;//ä¸´æ—¶æ–¹å—
-    Block blockNow;//ç°åœ¨çš„æ–¹å—
+    std::string name;//Íæ¼ÒÃû×Ö
+    int point;//µÃ·Ö
+    Block tempBlock;//ÁÙÊ±·½¿é
+    Block blockNow;//ÏÖÔÚµÄ·½¿é
     int posX;
-    int posY;// x,yç”¨äºåšæ–¹å—çš„å®šä½ï¼Œæ ‡è®°å·¦ä¸Šè§’æ–¹å—
-    Block blockNext;//ä¸‹ä¸€ä¸ªæ–¹å—
-    int map[20][10];//æ¸¸æˆåŒºåŸŸ
-    bool fail;//æ˜¯å¦å¤±è´¥
+    int posY;// x,yÓÃÓÚ×ö·½¿éµÄ¶¨Î»£¬±ê¼Ç×óÉÏ½Ç·½¿é
+    Block blockNext;//ÏÂÒ»¸ö·½¿é
+    int map[20][10];//ÓÎÏ·ÇøÓò
+    bool fail;//ÊÇ·ñÊ§°Ü
 };

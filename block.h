@@ -1,11 +1,11 @@
 class Block{
 public:
     Block();
-    void RandBlock(); //éšæœºç”Ÿæˆæ–¹å—
-    void TurnBlock();//æ—‹è½¬æ–¹å—ï¼šé€†æ—¶é’ˆ
-    int block[4][4];//å­˜å‚¨ç”Ÿæˆæ–¹å—
+    void RandBlock(); //Ëæ»úÉú³É·½¿é
+    void TurnBlock();//Ğı×ª·½¿é£ºÄæÊ±Õë
+    int block[4][4];//´æ´¢Éú³É·½¿é
 private:
-    int Choose_BlockType_form[10]; //è®°å½•æ¯ç§æ–¹å—åˆ†åˆ«æœ‰å“ªå‡ ç§é€‰æ‹©çŠ¶æ€
+    int Choose_BlockType_form[10]; //¼ÇÂ¼Ã¿ÖÖ·½¿é·Ö±ğÓĞÄÄ¼¸ÖÖÑ¡Ôñ×´Ì¬
     int BlockType_1form_1[4][4]; // ----
     int BlockType_1form_2[4][4]; //||||
     int BlockType_2form_1[4][4]; // |___
