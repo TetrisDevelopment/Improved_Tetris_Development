@@ -27,7 +27,7 @@ void initialViewOnePlayer(HANDLE hOut){
     cout<<"                    ■■■■■■■■■■■■"<<endl;
     gotoXY(hOut,0,0);
     cout<<"■玩家："<<endl<<endl;
-    cout<<"■等级："<<endl<<endl;
+    cout<<"■分数："<<endl<<endl;
     cout<<"■下一个方块："<<endl;
     gotoXY(hOut,0,11);
     SetConsoleTextAttribute(hOut,3);
@@ -53,7 +53,7 @@ void initialViewTwoPlayer(HANDLE hOut){
     cout<<"                    ■■■■■■■■■■■■                     ■■■■■■■■■■■■"<<endl;
     gotoXY(hOut,0,0);
     cout<<"■玩家1："<<endl<<endl;
-    cout<<"■等级："<<endl<<endl;
+    cout<<"■分数："<<endl<<endl;
     cout<<"■下一个方块："<<endl;
     gotoXY(hOut,0,11);
     SetConsoleTextAttribute(hOut,3);
@@ -68,7 +68,7 @@ void initialViewTwoPlayer(HANDLE hOut){
     gotoXY(hOut,44,0);
     cout<<"■玩家2："<<endl<<endl;
     gotoXY(hOut,44,2);
-    cout<<"■等级："<<endl<<endl;
+    cout<<"■分数："<<endl<<endl;
     gotoXY(hOut,44,4);
     cout<<"■下一个方块："<<endl;
     SetConsoleTextAttribute(hOut,14);
@@ -92,7 +92,14 @@ void initialViewTwoPlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;    
 }
-
+void printPointPlayer1(HANDLE hOut,int point){ //显示玩家1分数
+    gotoXY(hOut,8,2);
+    cout<<point<<endl;
+};
+ void printPointPlayer2(HANDLE hOut,int point){ //显示玩家2分数
+    gotoXY(hOut,52,2);
+    cout<<point<<endl;
+ }
 void drawBlock(HANDLE hOut, int block[4][4], int x, int y){}
 
 
