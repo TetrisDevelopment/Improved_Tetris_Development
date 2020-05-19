@@ -92,9 +92,19 @@ void initialViewTwoPlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;    
 }
+void printName1(HANDLE hOut,string name){//显示玩家1名字
+    gotoXY(hOut,9,0);                        
+    cout<<name<<endl;
+     
+}
+void printName2(HANDLE hOut,string name){//显示玩家2名字
+     gotoXY(hOut,53,0);                        
+    cout<<name<<endl;
+
+}
 void printPointPlayer1(HANDLE hOut,int point){ //显示玩家1分数
-    gotoXY(hOut,8,2);
-    cout<<point<<endl;
+    gotoXY(hOut,8,2);                          //未完成，需要实现将已打印分数删去这一功能         
+    cout<<point<<endl;                         
 };
  void printPointPlayer2(HANDLE hOut,int point){ //显示玩家2分数
     gotoXY(hOut,52,2);
