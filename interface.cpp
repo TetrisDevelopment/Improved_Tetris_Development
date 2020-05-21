@@ -178,6 +178,79 @@ void player2Victory(HANDLE hOut){
         cout<<endl;
     }   
 }
-void drawBlock(HANDLE hOut, int block[4][4], int x, int y){}
+void drawNextBlock1(HANDLE hOut,int block[4][4],int color){
+    for(int i=0;i<4;i++){
+        gotoXY(hOut,2,6+i);
+        for(int j=0;j<4;j++){
+            cout<<"  ";
+        }
+    }
+    SetConsoleTextAttribute(hOut,color);
+    for(int i=0;i<4;i++){
+        gotoXY(hOut,2,6+i);
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1)cout<<"■";
+            else cout<<"  ";
+        }
+    }
+};//画下一个方块
+void drawNextBlock2(HANDLE hOut,int block[4][4],int color){
+    for(int i=0;i<4;i++){
+        gotoXY(hOut,46,6+i);
+        for(int j=0;j<4;j++){
+            cout<<"  ";
+        }
+    }
+    SetConsoleTextAttribute(hOut,color);
+    for(int i=0;i<4;i++){
+        gotoXY(hOut,46,6+i);
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1)cout<<"■";
+            else cout<<"  ";
+        }
+    }
+};
+void drawNowBlock1(HANDLE hOut,int block[4][4],int x,int y,int color){
+    SetConsoleTextAttribute(hOut,color);
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1){ 
+            gotoXY(hOut,2*(y+j)+22,x+i);
+            cout << "■";
+            }
+        }
+    }
+};//画现在游戏池内的方块
+void drawNowBlock2(HANDLE hOut,int block[4][4],int x,int y,int color){
+    SetConsoleTextAttribute(hOut,color);
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1){ 
+            gotoXY(hOut,2*(y+j)+67,x+i);
+            cout << "■";
+            }
+        }
+    }
+};
+void deleteBlock1(HANDLE hOut,int block[4][4],int x, int y){
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1){ 
+            gotoXY(hOut,2*(y+j)+22,x+i);
+            cout <<"  ";
+            }
+        }
+    }
+};//将游戏池中已打印方块消除
+void deleteBlock2(HANDLE hOut,int block[4][4],int x, int y){
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(block[i][j]==1){ 
+            gotoXY(hOut,2*(y+j)+67,x+i);
+            cout <<"  ";
+            }
+        }
+    }
+};
 
 
