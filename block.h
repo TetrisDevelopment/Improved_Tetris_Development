@@ -13,7 +13,7 @@ private:
 	int Type; //记录block数组当前所存储的方块的类型（七大类） 
 	int Form; //记录 block数组当前所存储的方块的旋转状态； 
     int Choose_BlockType_form[10]; //记录每种方块分别有哪几种选择状态
-    int BlockType_1form_1[4][4]; //    ■■■■    // 逆时针旋转 form1-4 
+    int BlockType_1form_1[4][4]; //    ■ ■ ■ ■    // 逆时针旋转 form1-4 
 
     int BlockType_1form_2[4][4]; //    ■
    							     //    ■

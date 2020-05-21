@@ -2,6 +2,7 @@
 #include <cstring>
 #include <windows.h>
 #include <cstdlib>
+#include <time.h> 
 Block::Block() { //³õÊ¼»¯¸÷·½¿é£¨7¸ö»ù´¡·½¿é +¼¸ÖÖĞı×ª×´Ì¬£© 
     memset(BlockType_1form_1, 0, sizeof(BlockType_1form_1));
     BlockType_1form_1[1][0]=1;//    ¡ö¡ö¡ö¡ö
@@ -158,6 +159,7 @@ void Block::color(int c) { //ÉèÖÃËæ»úÑÕÉ«£¨Ôİ¶¨£©»ò²ÉÓÃÒ»ÖÖÀàĞÍµÄ·½¿é¹Ì¶¨Ò»ÖÖÑÕÉ
     //SetConsoleTextAttribute()º¯ÊıÊÇÒ»¸öAPIÉèÖÃ×ÖÌåÑÕÉ«ºÍ±³¾°É«µÄº¯Êı
 }
 void Block::RandBlock(){   //Ëæ»úÉú³É·½¿é
+    srand((unsigned)time(NULL));  //³õÊ¼»¯Ëæ»úÊı
 	switch (rand()%19){
 	case 0:{
 		for(int i=0; i<4 ; i++){
@@ -546,3 +548,4 @@ void Block::TurnBlock(){//Ğı×ª·½¿é£ºÄæÊ±Õë  (Ôİ¶¨£º´Ë·½·¨±Ï¾¹Âé·³)
 //       ÕâÑù×öµÄ»°RandBlock()º¯ÊıÖĞswitchÓï¾äµÄcaseÇé¿ö»á´Ó18¼õ»¯ÖÁ8£¬·½±ãºÜ¶à
 //       TurnBlock()º¯ÊıÖĞÒ²Ö»Ğè¶ÔblockÊı×éÖĞËù´æ´¢µÄÊı¾İ½øĞĞĞĞÁĞ»¥»»¾Í¿ÉÒÔÁË¡£
 //      4.XcodeÎÊÌâÓë½â¾ö 
+//      5.rand()²úÉúËæ»úÊıºÍsrand((unsigned)time(NULL))³õÊ¼»¯Ëæ»úÊı 

@@ -1,5 +1,4 @@
 #include "player.h"
-#include "block.h"
 #include <cstring>
 #include <cstdlib>
 #include <ctime>
@@ -57,14 +56,18 @@ Block Player::getNextBlock() {
     return blockNext;
 }
 
-//检测碰撞：
+//检测碰撞
 bool Player::detectCollision(Block block, int x, int y) {
     //发生碰撞返回false
     //未发生返回true
     for(int i = 0; i < 4; i++) {
         for(int j = 0; j < 4; j++) {
+            // cout << x + i << ' ' << y + j << endl;
             // 如果方块定位点在map范围内且block[4][4]和map[4][4]都为1，说明发生碰撞
-            if (x + i >= 0 && y + j >= 0 && map[x + i][y + j] == 1 && block.block[i][j] == 1) {
+            if (x + i >= 0 && y + j >= 0 && x + i < 20 && y + j < 10 && map[x + i][y + j] == 1 && block.block[i][j] == 1) {
+                return false;
+            }
+            else if(y + j < 0 || x + i >= 20 || y + j >= 10) {
                 return false;
             }
         }
@@ -87,9 +90,13 @@ void Player::rightMoveBlock() {
 }
 
 // 方块下移
-void Player::rightMoveBlock() {
+// 如发生碰撞就填充map
+// 返回值：true代表发生碰撞
+//       false代表未发生碰撞
+bool Player::moveDownBlock() {
     if(detectCollision(blockNow, this->posX+1, this->posY)) {
         this->posX++;
+        return false;
     }
     else {
         for(int i = 0; i < 4; i++) {
@@ -99,7 +106,7 @@ void Player::rightMoveBlock() {
                 }
             }
         }
-        detectReductsion();
+        return true;
     }
 }
 
@@ -172,4 +179,27 @@ void Player::addBlock(int num) {
             }
         }
     }
+}
+
+// 生成新方块方块
+void Player::makeNewBlock() {
+    // 确定posX和posY
+    // 新方块的赋值
+    // 下一个方块的生成
+    posX=-3;
+    posY=4;
+    blockNow = blockNext;
+    blockNext.RandBlock();
+    if(detectCollision(blockNow, posX, posY)) {
+        fail = true;
+    }
+}
+
+int Player::getX() {
+    return posX;
+}
+
+
+int Player::getY() {
+    return posY;
 }
