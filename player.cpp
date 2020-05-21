@@ -1,7 +1,6 @@
 #include "player.h"
 #include <cstring>
 #include <cstdlib>
-#include <ctime>
 using namespace std;
 
 // 初始化玩家
@@ -169,7 +168,7 @@ void Player::addBlock(int num) {
             map[19][j] = 0;
         }
         // 底部随机增加
-        srand((unsigned)time(NULL)); 
+         
         for(int j=0; j<10; j++) {
             map[19][rand()%10]++;
         }
