@@ -2,13 +2,13 @@
 #include<iostream>
 #include <conio.h>                  //┃■
 using namespace std;
-int vic[6][5]={ {0,0,1,0,0},
+int Interface::vic[6][5]={ {0,0,1,0,0},
                 {0,1,1,1,0},
                 {1,1,1,1,1},
                 {0,1,0,1,0},
                 {0,0,1,0,0},
                 {0,0,1,0,0}};
-void initialWindow(HANDLE hOut)
+void Interface::initialWindow(HANDLE hOut)
 {
     COORD size = {100, 30};
     SetConsoleScreenBufferSize(hOut, size);//更改指定缓冲区大小
@@ -18,13 +18,13 @@ void initialWindow(HANDLE hOut)
     SetConsoleCursorInfo(hOut, &cursor_info);//设置光标不可见
     SetConsoleTitle("我罗斯");//设置控制台窗口标题
 }
-void gotoXY(HANDLE hOut, int x, int y){
+void Interface::gotoXY(HANDLE hOut, int x, int y){
     COORD pos;
     pos.X = x;
     pos.Y = y;
     SetConsoleCursorPosition(hOut, pos);//设置光标位置
 }
-void initialViewOnePlayer(HANDLE hOut){
+void Interface::initialViewOnePlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);//设置为白色
     for(int i=0;i<20;i++){
         cout<<"                    ■                    ■"<<endl;
@@ -50,7 +50,7 @@ void initialViewOnePlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;
 }
-void initialViewTwoPlayer(HANDLE hOut){
+void Interface::initialViewTwoPlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);//设置为白色
     for(int i=0;i<20;i++){
         cout<<"                    ■                    ■                     ■                    ■"<<endl;
@@ -98,33 +98,33 @@ void initialViewTwoPlayer(HANDLE hOut){
     SetConsoleTextAttribute(hOut,15);
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;    
 }
-void printName1(HANDLE hOut,string name){//显示玩家1名字
+void Interface::printNamePlayer1(HANDLE hOut,string name){//显示玩家1名字
     SetConsoleTextAttribute(hOut,15);
     gotoXY(hOut,9,0);                        
     cout<<name<<endl;
      
 }
-void printName2(HANDLE hOut,string name){//显示玩家2名字
+void Interface::printNamePlayer2(HANDLE hOut,string name){//显示玩家2名字
     SetConsoleTextAttribute(hOut,15); 
     gotoXY(hOut,53,0);                        
     cout<<name<<endl;
 
 }
-void printPointPlayer1(HANDLE hOut,int point){ //显示玩家1分数
+void Interface::printPointPlayer1(HANDLE hOut,int point){ //显示玩家1分数
     SetConsoleTextAttribute(hOut,15);
     gotoXY(hOut,8,2);
     cout<<"   "<<endl; 
     gotoXY(hOut,8,2);                                  
     cout<<point<<endl;                         
 };
- void printPointPlayer2(HANDLE hOut,int point){ //显示玩家2分数
+ void Interface::printPointPlayer2(HANDLE hOut,int point){ //显示玩家2分数
     SetConsoleTextAttribute(hOut,15);
     gotoXY(hOut,52,2);
     cout<<"   "<<endl; 
     gotoXY(hOut,52,2);
     cout<<point<<endl;
  }
-void player1Victory(HANDLE hOut){
+void Interface::player1Victory(HANDLE hOut){
     gotoXY(hOut,26,22);
     SetConsoleTextAttribute(hOut,12);
     for(int i=0;i<2;i++){
@@ -151,7 +151,7 @@ void player1Victory(HANDLE hOut){
         cout<<endl;
     }   
 }
-void player2Victory(HANDLE hOut){
+void Interface::player2Victory(HANDLE hOut){
     gotoXY(hOut,71,22);
     SetConsoleTextAttribute(hOut,12);
     for(int i=0;i<2;i++){
@@ -178,7 +178,7 @@ void player2Victory(HANDLE hOut){
         cout<<endl;
     }   
 }
-void drawNextBlock1(HANDLE hOut,int block[4][4],int color){
+void Interface::drawNextBlock1(HANDLE hOut,int block[4][4],int color){
     for(int i=0;i<4;i++){
         gotoXY(hOut,2,6+i);
         for(int j=0;j<4;j++){
@@ -194,7 +194,7 @@ void drawNextBlock1(HANDLE hOut,int block[4][4],int color){
         }
     }
 };//画下一个方块
-void drawNextBlock2(HANDLE hOut,int block[4][4],int color){
+void Interface::drawNextBlock2(HANDLE hOut,int block[4][4],int color){
     for(int i=0;i<4;i++){
         gotoXY(hOut,46,6+i);
         for(int j=0;j<4;j++){
@@ -210,7 +210,7 @@ void drawNextBlock2(HANDLE hOut,int block[4][4],int color){
         }
     }
 };
-void drawNowBlock1(HANDLE hOut,int block[4][4],int x,int y,int color){
+void Interface::drawNowBlock1(HANDLE hOut,int block[4][4],int x,int y,int color){
     SetConsoleTextAttribute(hOut,color);
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
@@ -221,7 +221,7 @@ void drawNowBlock1(HANDLE hOut,int block[4][4],int x,int y,int color){
         }
     }
 };//画现在游戏池内的方块
-void drawNowBlock2(HANDLE hOut,int block[4][4],int x,int y,int color){
+void Interface::drawNowBlock2(HANDLE hOut,int block[4][4],int x,int y,int color){
     SetConsoleTextAttribute(hOut,color);
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
@@ -232,7 +232,7 @@ void drawNowBlock2(HANDLE hOut,int block[4][4],int x,int y,int color){
         }
     }
 };
-void deleteBlock1(HANDLE hOut,int block[4][4],int x, int y){
+void Interface::deleteBlock1(HANDLE hOut,int block[4][4],int x, int y){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
             if(block[i][j]==1){ 
@@ -242,7 +242,7 @@ void deleteBlock1(HANDLE hOut,int block[4][4],int x, int y){
         }
     }
 };//将游戏池中已打印方块消除
-void deleteBlock2(HANDLE hOut,int block[4][4],int x, int y){
+void Interface::deleteBlock2(HANDLE hOut,int block[4][4],int x, int y){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
             if(block[i][j]==1){ 

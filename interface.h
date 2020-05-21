@@ -19,7 +19,7 @@ public:
     void drawNowBlock2(HANDLE hOut,int block[4][4],int x,int y,int color);
     void deleteBlock1(HANDLE hOut,int block[4][4],int x, int y);//将游戏池中已打印方块消除
     void deleteBlock2(HANDLE hOut,int block[4][4],int x, int y);
-    static int vic[8][32];
+    static int vic[6][5];
 private:
 
 };
