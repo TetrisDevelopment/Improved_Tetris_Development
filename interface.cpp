@@ -2,6 +2,12 @@
 #include<iostream>
 #include <conio.h>                  //┃■
 using namespace std;
+int vic[6][5]={ {0,0,1,0,0},
+                {0,1,1,1,0},
+                {1,1,1,1,1},
+                {0,1,0,1,0},
+                {0,0,1,0,0},
+                {0,0,1,0,0}};
 void initialWindow(HANDLE hOut)
 {
     COORD size = {100, 30};
@@ -87,29 +93,91 @@ void initialViewTwoPlayer(HANDLE hOut){
     gotoXY(hOut,44,18);
     cout<<"X：重新开始游戏 "<<endl;
     gotoXY(hOut,0,23);
-    SetConsoleTextAttribute(hOut,12);
+    SetConsoleTextAttribute(hOut,11);
     cout<<"■■双人模式■■"<<endl;
     SetConsoleTextAttribute(hOut,15);
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;    
 }
 void printName1(HANDLE hOut,string name){//显示玩家1名字
+    SetConsoleTextAttribute(hOut,15);
     gotoXY(hOut,9,0);                        
     cout<<name<<endl;
      
 }
 void printName2(HANDLE hOut,string name){//显示玩家2名字
-     gotoXY(hOut,53,0);                        
+    SetConsoleTextAttribute(hOut,15); 
+    gotoXY(hOut,53,0);                        
     cout<<name<<endl;
 
 }
 void printPointPlayer1(HANDLE hOut,int point){ //显示玩家1分数
-    gotoXY(hOut,8,2);                          //未完成，需要实现将已打印分数删去这一功能         
+    SetConsoleTextAttribute(hOut,15);
+    gotoXY(hOut,8,2);
+    cout<<"   "<<endl; 
+    gotoXY(hOut,8,2);                                  
     cout<<point<<endl;                         
 };
  void printPointPlayer2(HANDLE hOut,int point){ //显示玩家2分数
+    SetConsoleTextAttribute(hOut,15);
+    gotoXY(hOut,52,2);
+    cout<<"   "<<endl; 
     gotoXY(hOut,52,2);
     cout<<point<<endl;
  }
+void player1Victory(HANDLE hOut){
+    gotoXY(hOut,26,22);
+    SetConsoleTextAttribute(hOut,12);
+    for(int i=0;i<2;i++){
+        gotoXY(hOut,26,22+i);
+        for(int j=0;j<5;j++){
+            if(vic[i][j]==0)cout<<"  ";
+            else cout<<"■";
+        }
+        cout<<endl;
+    }
+    gotoXY(hOut,26,24);
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"■";
+    SetConsoleTextAttribute(hOut,12);
+    cout<<"■■■";
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"■"<<endl;
+    for(int i=3;i<6;i++){
+        gotoXY(hOut,26,22+i);
+        for(int j=0;j<5;j++){
+            if(vic[i][j]==0)cout<<"  ";
+            else cout<<"■";
+        }
+        cout<<endl;
+    }   
+}
+void player2Victory(HANDLE hOut){
+    gotoXY(hOut,71,22);
+    SetConsoleTextAttribute(hOut,12);
+    for(int i=0;i<2;i++){
+        gotoXY(hOut,71,22+i);
+        for(int j=0;j<5;j++){
+            if(vic[i][j]==0)cout<<"  ";
+            else cout<<"■";
+        }
+        cout<<endl;
+    }
+    gotoXY(hOut,71,24);
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"■";
+    SetConsoleTextAttribute(hOut,12);
+    cout<<"■■■";
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"■"<<endl;
+    for(int i=3;i<6;i++){
+        gotoXY(hOut,71,22+i);
+        for(int j=0;j<5;j++){
+            if(vic[i][j]==0)cout<<"  ";
+            else cout<<"■";
+        }
+        cout<<endl;
+    }   
+}
 void drawBlock(HANDLE hOut, int block[4][4], int x, int y){}
 
 

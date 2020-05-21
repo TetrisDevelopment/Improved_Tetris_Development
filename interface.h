@@ -12,7 +12,9 @@ public:
     void printNamePlayer1(HANDLE hOut,string name);//显示玩家1名字
     void printNamePlayer2(HANDLE hOut,string name);//显示玩家2名字
     void gotoXY(HANDLE hOut, int x, int y);//定位光标
-    void playerVictory();//玩家胜利效果
+    void player1Victory(HANDLE hOut);//玩家胜利效果
+    void player2Victory(HANDLE hOut);//玩家胜利效果
+    static int vic[8][32];
 private:
 
 };
