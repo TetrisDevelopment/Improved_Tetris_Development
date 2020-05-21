@@ -47,6 +47,16 @@ string Player::getName() {
     return name;
 }
 
+//获取目前方块
+Block Player::getNowBlock() {
+    return blockNow;
+}
+
+//获取下一个方块
+Block Player::getNextBlock() {
+    return blockNext;
+}
+
 //检测碰撞：
 bool Player::detectCollision(Block block, int x, int y) {
     //发生碰撞返回false
@@ -82,6 +92,13 @@ void Player::rightMoveBlock() {
         this->posX++;
     }
     else {
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                if(posX + i >= 0 && posY + j >= 0 && posX + i < 20 && posY + j < 20 && blockNow.block[i][j] == 1) {
+                    map[posX+i][posY+j]=1;
+                }
+            }
+        }
         detectReductsion();
     }
 }
