@@ -252,5 +252,27 @@ void Interface::deleteBlock2(int block[4][4],int x, int y){
         }
     }
 };
+void Interface::printMap1(int map[20][10]){
+    SetConsoleTextAttribute(hOut,15);
+    for(int i=0;i<20;i++){
+        for(int j=0;j<10;j++){
+            if(map[i][j]==1){ 
+            gotoXY(2*j+22,i);
+            cout << "¡ö";
+            }
+        }
+    }
+}
+void Interface::printMap2(int map[20][10]){
+    SetConsoleTextAttribute(hOut,15);
+    for(int i=0;i<20;i++){
+        for(int j=0;j<10;j++){
+            if(map[i][j]==1){ 
+            gotoXY(2*j+67,i);
+            cout << "¡ö";
+            }
+        }
+    }
+}
 
 
