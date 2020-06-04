@@ -61,13 +61,16 @@ bool Player::detectCollision(Block block, int x, int y) {
     //未发生返回true
     for(int i = 0; i < 4; i++) {
         for(int j = 0; j < 4; j++) {
-            // cout << x + i << ' ' << y + j << endl;
-            // 如果方块定位点在map范围内且block[4][4]和map[4][4]都为1，说明发生碰撞
-            if (x + i >= 0 && y + j >= 0 && x + i < 20 && y + j < 10 && map[x + i][y + j] == 1 && block.block[i][j] == 1) {
-                return false;
-            }
-            else if(y + j < 0 || x + i >= 20 || y + j >= 10) {
-                return false;
+            // 如果检测到block中该位置为1的话
+            // 先检测这个位置是否越界
+            // 再检测这个位置对应的map位置是否也为1
+            if(block.block[i][j]==1) {
+                if(x + i >= 20 || y + j < 0 || y + j >= 10) {
+                    return false;
+                }
+                else if(map[x+i][y+j]==1) {
+                    return false;
+                }
             }
         }
     }
