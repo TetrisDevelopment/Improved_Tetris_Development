@@ -22,8 +22,12 @@ public:
     void drawNowBlock2(int block[4][4],int x,int y,int color);
     void deleteBlock1(int block[4][4],int x, int y);//将游戏池中已打印方块消除
     void deleteBlock2(int block[4][4],int x, int y);
-    void printMap1(int map[20][10]);
+    void clearMap1(int map[20][10]);//将map清空
+    void clearMap2(int map[20][10]);
+    void printMap1(int map[20][10]);//打印map
     void printMap2(int map[20][10]);
+    void clearVictory1();//消除胜利标志
+    void clearVictory2();
     static int vic[6][5];
 private:
     HANDLE hOut;
