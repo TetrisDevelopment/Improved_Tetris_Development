@@ -274,5 +274,43 @@ void Interface::printMap2(int map[20][10]){
         }
     }
 }
+void Interface::clearMap1(int map[20][10]){
+    for(int i=0;i<20;i++){
+        for(int j=0;j<10;j++){
+            if(map[i][j]==1){ 
+            gotoXY(2*j+22,i);
+            cout <<"  ";
+            }
+        }
+    }
+}
+void Interface::clearMap2(int map[20][10]){
+    for(int i=0;i<20;i++){
+        for(int j=0;j<10;j++){
+            if(map[i][j]==1){ 
+            gotoXY(2*j+22,i);
+            cout <<"  ";
+            }
+        }
+    }
+}
+void Interface::clearVictory1(){
+    for(int i=0;i<6;i++){
+        gotoXY(26,22+i);
+        for(int j=0;j<5;j++){
+            cout<<"  ";
+        }
+    }
+    
+}
+void Interface::clearVictory2(){
+    for(int i=0;i<6;i++){
+         gotoXY(71,22+i);
+        for(int j=0;j<5;j++){
+            cout<<"  ";
+        }
+    }
+    
+}
 
 
