@@ -214,9 +214,9 @@ void Interface::drawNowBlock1(int block[4][4],int x,int y,int color){
     SetConsoleTextAttribute(hOut,color);
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1){ 
-            gotoXY(2*(y+j)+22,x+i);
-            cout << "¡ö";
+            if(block[i][j]==1&&x+i>=0){ 
+                gotoXY(2*(y+j)+22,x+i);
+                cout << "¡ö";
             }
         }
     }
@@ -225,9 +225,9 @@ void Interface::drawNowBlock2(int block[4][4],int x,int y,int color){
     SetConsoleTextAttribute(hOut,color);
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1){ 
-            gotoXY(2*(y+j)+67,x+i);
-            cout << "¡ö";
+            if(block[i][j]==1&&x+1>=0){ 
+                gotoXY(2*(y+j)+67,x+i);
+                cout << "¡ö";
             }
         }
     }
@@ -235,9 +235,9 @@ void Interface::drawNowBlock2(int block[4][4],int x,int y,int color){
 void Interface::deleteBlock1(int block[4][4],int x, int y){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1){ 
-            gotoXY(2*(y+j)+22,x+i);
-            cout <<"  ";
+            if(block[i][j]==1&&x+1>=0){ 
+                gotoXY(2*(y+j)+22,x+i);
+                cout <<"  ";
             }
         }
     }
@@ -245,9 +245,9 @@ void Interface::deleteBlock1(int block[4][4],int x, int y){
 void Interface::deleteBlock2(int block[4][4],int x, int y){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1){ 
-            gotoXY(2*(y+j)+67,x+i);
-            cout <<"  ";
+            if(block[i][j]==1&&x+1>=0){  
+                gotoXY(2*(y+j)+67,x+i);
+                cout <<"  ";
             }
         }
     }
@@ -257,8 +257,8 @@ void Interface::printMap1(int map[20][10]){
     for(int i=0;i<20;i++){
         for(int j=0;j<10;j++){
             if(map[i][j]==1){ 
-            gotoXY(2*j+22,i);
-            cout << "¡ö";
+                gotoXY(2*j+22,i);
+                cout << "¡ö";
             }
         }
     }
@@ -288,7 +288,7 @@ void Interface::clearMap2(int map[20][10]){
     for(int i=0;i<20;i++){
         for(int j=0;j<10;j++){
             if(map[i][j]==1){ 
-            gotoXY(2*j+22,i);
+            gotoXY(2*j+67,i);
             cout <<"  ";
             }
         }
