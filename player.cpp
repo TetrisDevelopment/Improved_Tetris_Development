@@ -119,8 +119,10 @@ int Player::detectReductsion() {
     for(int i = 19; i >= 0; i--) {
         // 记录单行的方块个数
         int tempcount = 0;
-        for(int j = 0; i < 10; j++) {
-            tempcount++;
+        for(int j = 0; j < 10; j++) {
+            if(map[i][j]==1) {
+                tempcount++;
+            }
         }
         if(tempcount == 10) {
             // 增加分数
