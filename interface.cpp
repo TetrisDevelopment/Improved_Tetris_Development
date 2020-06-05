@@ -33,7 +33,7 @@ void Interface::initialViewOnePlayer(){
     cout<<"                    ■■■■■■■■■■■■"<<endl;
     gotoXY(0,0);
     cout<<"■玩家："<<endl<<endl;
-    cout<<"■分数："<<endl<<endl;
+    cout<<"■分数：0"<<endl<<endl;
     cout<<"■下一个方块："<<endl;
     gotoXY(0,11);
     SetConsoleTextAttribute(hOut,3);
@@ -59,7 +59,7 @@ void Interface::initialViewTwoPlayer(){
     cout<<"                    ■■■■■■■■■■■■                     ■■■■■■■■■■■■"<<endl;
     gotoXY(0,0);
     cout<<"■玩家1："<<endl<<endl;
-    cout<<"■分数："<<endl<<endl;
+    cout<<"■分数：0"<<endl<<endl;
     cout<<"■下一个方块："<<endl;
     gotoXY(0,11);
     SetConsoleTextAttribute(hOut,3);
@@ -74,7 +74,7 @@ void Interface::initialViewTwoPlayer(){
     gotoXY(44,0);
     cout<<"■玩家2："<<endl<<endl;
     gotoXY(44,2);
-    cout<<"■分数："<<endl<<endl;
+    cout<<"■分数：0"<<endl<<endl;
     gotoXY(44,4);
     cout<<"■下一个方块："<<endl;
     SetConsoleTextAttribute(hOut,14);
@@ -178,61 +178,61 @@ void Interface::player2Victory(){
         cout<<endl;
     }   
 }
-void Interface::drawNextBlock1(int block[4][4],int color){
+void Interface::drawNextBlock1(Block t){
     for(int i=0;i<4;i++){
         gotoXY(2,6+i);
         for(int j=0;j<4;j++){
             cout<<"  ";
         }
     }
-    SetConsoleTextAttribute(hOut,color);
+    SetConsoleTextAttribute(hOut,t.getColor());
     for(int i=0;i<4;i++){
         gotoXY(2,6+i);
         for(int j=0;j<4;j++){
-            if(block[i][j]==1)cout<<"■";
+            if(t.block[i][j]==1)cout<<"■";
             else cout<<"  ";
         }
     }
 };//画下一个方块
-void Interface::drawNextBlock2(int block[4][4],int color){
+void Interface::drawNextBlock2(Block t){
     for(int i=0;i<4;i++){
         gotoXY(46,6+i);
         for(int j=0;j<4;j++){
             cout<<"  ";
         }
     }
-    SetConsoleTextAttribute(hOut,color);
+    SetConsoleTextAttribute(hOut,t.getColor());
     for(int i=0;i<4;i++){
         gotoXY(46,6+i);
         for(int j=0;j<4;j++){
-            if(block[i][j]==1)cout<<"■";
+            if(t.block[i][j]==1)cout<<"■";
             else cout<<"  ";
         }
     }
 };
-void Interface::drawNowBlock1(int block[4][4],int x,int y,int color){
-    SetConsoleTextAttribute(hOut,color);
+void Interface::drawNowBlock1(Block t,int x,int y){
+    SetConsoleTextAttribute(hOut,t.getColor());
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1&&x+i>=0){ 
+            if(t.block[i][j]==1&&x+i>=0){ 
                 gotoXY(2*(y+j)+22,x+i);
                 cout << "■";
             }
         }
     }
 };//画现在游戏池内的方块
-void Interface::drawNowBlock2(int block[4][4],int x,int y,int color){
-    SetConsoleTextAttribute(hOut,color);
+void Interface::drawNowBlock2(Block t,int x,int y){
+    SetConsoleTextAttribute(hOut,t.getColor());
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1&&x+1>=0){ 
+            if(t.block[i][j]==1&&x+1>=0){ 
                 gotoXY(2*(y+j)+67,x+i);
                 cout << "■";
             }
         }
     }
 };
-void Interface::deleteBlock1(int block[4][4],int x, int y){
+/*void Interface::deleteBlock1(int block[4][4],int x, int y){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
             if(block[i][j]==1&&x+1>=0){ 
@@ -251,7 +251,7 @@ void Interface::deleteBlock2(int block[4][4],int x, int y){
             }
         }
     }
-};
+};*/
 void Interface::printMap1(int map[20][10]){
     SetConsoleTextAttribute(hOut,15);
     for(int i=0;i<20;i++){
@@ -277,20 +277,16 @@ void Interface::printMap2(int map[20][10]){
 void Interface::clearMap1(int map[20][10]){
     for(int i=0;i<20;i++){
         for(int j=0;j<10;j++){
-            if(map[i][j]==1){ 
             gotoXY(2*j+22,i);
             cout <<"  ";
-            }
         }
     }
 }
 void Interface::clearMap2(int map[20][10]){
     for(int i=0;i<20;i++){
         for(int j=0;j<10;j++){
-            if(map[i][j]==1){ 
             gotoXY(2*j+67,i);
             cout <<"  ";
-            }
         }
     }
 }
