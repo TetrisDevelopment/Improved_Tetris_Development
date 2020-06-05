@@ -1,5 +1,6 @@
 #include <windows.h>
 #include<string>
+#include"block.h"
 using namespace std;
 class Interface {
 public:
@@ -16,12 +17,12 @@ public:
     void gotoXY(int x, int y);//定位光标
     void player1Victory();//玩家胜利效果
     void player2Victory();//玩家胜利效果
-    void drawNextBlock1(int block[4][4],int color);//画下一个方块
-    void drawNextBlock2(int block[4][4],int color);
-    void drawNowBlock1(int block[4][4],int x,int y,int color);//画现在游戏池内的方块
-    void drawNowBlock2(int block[4][4],int x,int y,int color);
-    void deleteBlock1(int block[4][4],int x, int y);//将游戏池中已打印方块消除
-    void deleteBlock2(int block[4][4],int x, int y);
+    void drawNextBlock1(Block t);//画下一个方块
+    void drawNextBlock2(Block t);
+    void drawNowBlock1(Block t,int x,int y);//画现在游戏池内的方块
+    void drawNowBlock2(Block t,int x,int y);
+    /*void deleteBlock1(int block[4][4],int x, int y);//将游戏池中已打印方块消除
+    void deleteBlock2(int block[4][4],int x, int y);*/
     void clearMap1(int map[20][10]);//将map清空
     void clearMap2(int map[20][10]);
     void printMap1(int map[20][10]);//打印map
