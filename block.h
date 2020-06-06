@@ -1,86 +1,126 @@
-
 class Block{
 public:
-    Block(); //初始化各方块（7个基础方块 +几种旋转状态） 
+    Block();  //初始化随机数   
     void RandBlock(); //随机生成方块
-    void TurnBlock();//旋转方块：逆时针
-    void Record_BlockType_form();//初始化数组 Choose_BlockType_form (不能直接对类的数据成员初始化)
+    void TurnBlock();//旋转方块： 顺时针
     int block[4][4];//存储生成方块
-    void color(int c);  //设置随机颜色
-	// void color();
-		
+    int getColor(); //获取当前颜色 
+    void Block_to_block(int BlockType_form_[][4]); // 方块拷贝到block数组	
 private:
 	int Type; //记录block数组当前所存储的方块的类型（七大类） 
-	int Form; //记录 block数组当前所存储的方块的旋转状态； 
-    int Choose_BlockType_form[10]; //记录每种方块分别有哪几种选择状态
-    int BlockType_1form_1[4][4]; //    ■ ■ ■ ■    // 逆时针旋转 form1-4 
+	int Form; //记录block数组当前所存储的方块的旋转状态； 
+    int color; // 记录当前颜色 
+    
+ //-------------------------------------------------------------------------//  
+   // 11
+    static int BlockType_1form_1[4][4]; //    ■■■■    // 顺时针旋转 form1-4 
 
-    int BlockType_1form_2[4][4]; //    ■
-   							     //    ■
-								 //    ■
-   								 //    ■
+    static int BlockType_1form_2[4][4]; //    ■
+   							            //    ■
+								        //    ■
+   								        //    ■
+   								        
+    static int BlockType_1form_3[4][4]; //    ■■■■    
+
+    static int BlockType_1form_4[4][4]; //    ■
+   							            //    ■
+								        //    ■
+   								        //    ■   								        
+//-------------------------------------------------------------------------//  
+    //1
+    static int BlockType_2form_1[4][4]; //    ■
+                                        //    ■■■
+                                        
+    static int BlockType_2form_2[4][4]; //    ■■
+     							        //    ■
+  								        //    ■
     
-    int BlockType_2form_1[4][4]; //    ■
-  								 //    ■ ■ ■
+    static int BlockType_2form_3[4][4]; //    ■■■  
+                                        //        ■
     
-    int BlockType_2form_2[4][4]; //     ■  
-                                 //     ■
-                                 //   ■ ■
-    
-    int BlockType_2form_3[4][4]; //    ■ ■ ■  
-                                 //        ■
-    
-    int BlockType_2form_4[4][4]; //    ■ ■
-     							 //    ■
-  								 //    ■
-    
-    int BlockType_3form_1[4][4]; //        ■    
-                                 //    ■ ■ ■
-                                 
-    int BlockType_3form_2[4][4]; //    ■ ■    
-    							 //      ■
-   								 //      ■
+    static int BlockType_2form_4[4][4]; //     ■  
+                                        //     ■
+                                        //   ■■
+                                        
+//-------------------------------------------------------------------------// 
+    //6
+    static int BlockType_3form_1[4][4]; //        ■    
+                                        //    ■■■
+                                        
+    static int BlockType_3form_2[4][4]; //    ■
+                                        //    ■
+                                        //    ■■
+  
+    static int BlockType_3form_3[4][4]; //    ■■■
+                                        //    ■
+                                        
+    static int BlockType_3form_4[4][4]; //    ■■    
+    							        //      ■
+   								        //      ■                       
+                                            
+//-------------------------------------------------------------------------//        
+       //5                   
+    static int BlockType_4form_1[4][4]; //      ■
+   								        //    ■■■
+   								        
+    static int BlockType_4form_2[4][4]; //    ■
+                                        //    ■■
+  								        //    ■   								        
    								 
-    int BlockType_3form_3[4][4]; //    ■ ■ ■
-                                 //    ■
-                                 
-    int BlockType_3form_4[4][4]; //    ■
-                                 //    ■
-                                 //    ■ ■
-                                 
-    int BlockType_4form_1[4][4]; //      ■
-   								 //    ■ ■ ■
+    static int BlockType_4form_3[4][4]; //    ■■■
+                                        //      ■
    								 
-    int BlockType_4form_2[4][4]; //     ■
-    							 //   ■ ■
-   								 //     ■
+    static int BlockType_4form_4[4][4]; //    ■
+    							        //  ■■
+   							           //     ■
    								 
-    int BlockType_4form_3[4][4]; //    ■ ■ ■
-   								 //      ■
-   								 
-    int BlockType_4form_4[4][4]; //    ■
-                                 //    ■ ■
-  								 //    ■
+//-------------------------------------------------------------------------// 								        
+    //14
+    static int BlockType_5form_1[4][4]; //    ■■
+                                        //    ■■
+                                        
+    static int BlockType_5form_2[4][4]; //    ■■
+                                        //    ■■                                        
+                                        
+    static int BlockType_5form_3[4][4]; //    ■■
+                                        //    ■■
+                                        
+    static int BlockType_5form_4[4][4]; //    ■■
+                                        //    ■■                                                                             
     
-    int BlockType_5form_1[4][4]; //    ■ ■
-                                 //    ■ ■
+//-------------------------------------------------------------------------// 
+    // 10
+    static int BlockType_6form_1[4][4];//      ■■
+    							       //    ■■
     
-    int BlockType_6form_1[4][4];//      ■ ■
-    							//    ■ ■
+    static int BlockType_6form_2[4][4]; //    ■
+   								        //    ■■
+   								        //      ■
+
+    static int BlockType_6form_3[4][4];//      ■■
+    							       //    ■■
     
-    int BlockType_6form_2[4][4]; //    ■
-   								 //    ■ ■
-   								 //      ■
+    static int BlockType_6form_4[4][4]; //    ■
+   								        //    ■■
+   								        //      ■
+   								        
+//-------------------------------------------------------------------------// 
+   //4
+    static int BlockType_7form_1[4][4]; //    ■■
+                                        //      ■■
     
-    int BlockType_7form_1[4][4]; //    ■ ■
-    							 //      ■ ■
+    static int BlockType_7form_2[4][4]; //      ■
+    							        //    ■■
+    	      					        //    ■
     
-    int BlockType_7form_2[4][4]; //      ■
-    							 //    ■ ■
-    	      					 //    ■
+    static int BlockType_7form_3[4][4]; //    ■■
+                                        //      ■■
     
+    static int BlockType_7form_4[4][4]; //      ■
+    							        //    ■■
+    	      					        //    ■
     
-     
+//-------------------------------------------------------------------------//     
     
 };
 
