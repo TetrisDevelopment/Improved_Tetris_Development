@@ -1,3 +1,4 @@
+#define _BLOCK 
 class Block{
 public:
     Block();  //初始化随机数   

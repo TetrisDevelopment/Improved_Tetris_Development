@@ -1,5 +1,9 @@
 #include<iostream>
+
+#ifndef _BLOCK
 #include "block.h"
+#endif
+
 class Player {
 public:
     Player();//³õÊ¼»¯Íæ¼Ò
