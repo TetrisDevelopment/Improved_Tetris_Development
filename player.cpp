@@ -77,7 +77,7 @@ bool Player::detectCollision(Block block, int x, int y) {
                 if(x + i >= 20 || y + j < 0 || y + j >= 10) {
                     return false;
                 }
-                else if(map[x+i][y+j]==1) {
+                else if(map[x+i][y+j]==1 && x + i >=0) {
                     return false;
                 }
             }
@@ -112,7 +112,7 @@ bool Player::moveDownBlock() {
     else {
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
-                if(posX + i >= 0 && posY + j >= 0 && posX + i < 20 && posY + j < 20 && blockNow.block[i][j] == 1) {
+                if(posX + i >= 0 && posY + j >= 0 && posX + i < 20 && posY + j < 10 && blockNow.block[i][j] == 1) {
                     map[posX+i][posY+j]=1;
                 }
             }
