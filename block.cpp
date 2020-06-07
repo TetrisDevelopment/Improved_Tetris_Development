@@ -350,39 +350,39 @@ void Block::ChangeBlock(int BlockType_form_1[][4],int BlockType_form_2[][4],
 void Block::TurnBlock(){//Ðý×ª·½¿é£ºË³Ê±Õë 
 	switch(Type){
 		case 1:{
-		   ChangeBlock(BlockType_1form_1[][4],BlockType_1form_2[][4],
-    BlockType_1form_3[][4],BlockType_1form_4[][4]);
+		   ChangeBlock(BlockType_1form_1,BlockType_1form_2,
+    BlockType_1form_3,BlockType_1form_4);
 			break;
 		}
 			
 		case 2:{
-			ChangeBlock(BlockType_2form_1[][4],BlockType_2form_2[][4],
-    BlockType_2form_3[][4],BlockType_2form_4[][4]);
+			ChangeBlock(BlockType_2form_1,BlockType_2form_2,
+    BlockType_2form_3,BlockType_2form_4);
 			break;
 		}
 		case 3:{
-		ChangeBlock(BlockType_3form_1[][4],BlockType_3form_2[][4],
-    BlockType_3form_3[][4],BlockType_3form_4[][4]);
+		ChangeBlock(BlockType_3form_1,BlockType_3form_2,
+    BlockType_3form_3,BlockType_3form_4);
 			break;
 		}
 		case 4:{
-			ChangeBlock(BlockType_4form_1[][4],BlockType_4form_2[][4],
-    BlockType_4form_3[][4],BlockType_4form_4[][4]);
+			ChangeBlock(BlockType_4form_1,BlockType_4form_2,
+    BlockType_4form_3,BlockType_4form_4);
 			break;
 		}
 		case 5:{	
-			ChangeBlock(BlockType_5form_1[][4],BlockType_5form_2[][4],
-    BlockType_5form_3[][4],BlockType_5form_4[][4]);
+			ChangeBlock(BlockType_5form_1,BlockType_5form_2,
+    BlockType_5form_3,BlockType_5form_4);
 			break;
 		}
 		case 6:{
-		ChangeBlock(BlockType_6form_1[][4],BlockType_6form_2[][4],
-    BlockType_6form_3[][4],BlockType_6form_4[][4]);
+		ChangeBlock(BlockType_6form_1,BlockType_6form_2,
+    BlockType_6form_3,BlockType_6form_4);
 			break;
 		}
 		case 7:{
-			ChangeBlock(BlockType_7form_1[][4],BlockType_7form_2[][4],
-    BlockType_7form_3[][4],BlockType_7form_4[][4]);
+			ChangeBlock(BlockType_7form_1,BlockType_7form_2,
+    BlockType_7form_3,BlockType_7form_4);
 			break;
 		}
 		default: break;

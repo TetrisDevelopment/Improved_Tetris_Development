@@ -7,7 +7,7 @@ public:
     int block[4][4];//存储生成方块
     int getColor(); //获取当前颜色 
     void Block_to_block(int BlockType_form_[][4]); // 方块拷贝到block数组
-    void Block::ChangeBlock(int BlockType_form_1[][4],int BlockType_form_2[][4],
+    void ChangeBlock(int BlockType_form_1[][4],int BlockType_form_2[][4],
     int BlockType_form_3[][4],int BlockType_form_4[][4]);  //配合TurnBlock()，进行方块的旋转
 private:
 	int Type; //记录block数组当前所存储的方块的类型（七大类） 
