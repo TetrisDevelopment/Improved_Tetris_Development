@@ -10,6 +10,7 @@ public:
     void gameControl();                 // ¿ØÖÆÈ«¾Ö
 private:
     Interface itfs;
+    int speed;
 };
 // 
 

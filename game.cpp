@@ -6,6 +6,7 @@ using namespace std;
 
 Game::Game() {
     itfs.initialWindow();
+    speed = 50;
 }
 
 void Game::gameControl() {
@@ -56,6 +57,7 @@ int Game::selectGameType() {
 }
 
 void Game::onePlayer(Player player) {
+    int temptime = speed;
     itfs.initialViewOnePlayer();
     itfs.printNamePlayer1(player.getName());
     itfs.printPointPlayer1(player.getPoint());
@@ -87,13 +89,14 @@ void Game::onePlayer(Player player) {
                 player.rightMoveBlock();
             }
             // ºÏ≤‚≈ˆ◊≤∫Õ «∑Ò ß∞‹
-            if(player.detectReductsion()) {
-                player.detectIsFail();
-                if(!player.getStatus()) {
-                    // ‰÷»æ ß∞‹“≥√Ê
-                    return;
-                }
-            }
+            // if(player.detectReductsion()) {
+            //     player.detectIsFail();
+            //     if(!player.getStatus()) {
+            //         // ‰÷»æ ß∞‹“≥√Ê
+            //         return;
+            //     }
+            // }
+            player.detectReductsion();
             // «Â≥˝map«¯”Ú
             itfs.clearMap1(player.map);
             // ª≠∑ΩøÈ
@@ -102,6 +105,23 @@ void Game::onePlayer(Player player) {
             itfs.printMap1(player.map);
             // ª≠∑÷ ˝
             itfs.printPointPlayer1(player.getPoint());
+        }
+        Sleep(20);
+        if(--temptime == 0) {
+            if(player.moveDownBlock()) {
+                player.detectIsFail();
+                if(!player.getStatus()) {
+                    // ‰÷»æ ß∞‹“≥√Ê
+                    return;
+                }
+                player.makeNewBlock();
+            }
+            player.detectReductsion();
+            itfs.clearMap1(player.map);
+            itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+            itfs.printMap1(player.map);
+            itfs.printPointPlayer1(player.getPoint());
+            temptime = speed;
         }
     }
 }
