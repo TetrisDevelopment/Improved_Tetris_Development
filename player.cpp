@@ -40,6 +40,15 @@ bool Player::getStatus() {
     }
 }
 
+// 检测顶部是否有方块
+void Player::detectIsFail() {
+    for(int i = 0; i < 10; i++) {
+        if(map[0][i] == 1) {
+            fail = true;
+        }
+    }
+}
+
 //获取玩家名字
 string Player::getName() {
     return name;
@@ -68,7 +77,7 @@ bool Player::detectCollision(Block block, int x, int y) {
                 if(x + i >= 20 || y + j < 0 || y + j >= 10) {
                     return false;
                 }
-                else if(map[x+i][y+j]==1) {
+                else if(map[x+i][y+j]==1 && x + i >=0) {
                     return false;
                 }
             }
@@ -103,7 +112,7 @@ bool Player::moveDownBlock() {
     else {
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
-                if(posX + i >= 0 && posY + j >= 0 && posX + i < 20 && posY + j < 20 && blockNow.block[i][j] == 1) {
+                if(posX + i >= 0 && posY + j >= 0 && posX + i < 20 && posY + j < 10 && blockNow.block[i][j] == 1) {
                     map[posX+i][posY+j]=1;
                 }
             }
@@ -153,15 +162,21 @@ void Player::turnBlock() {
 }
 
 // 方块增加
-void Player::addBlock(int num) {
+// 如果成功增加返回true
+// 如果不能增加返回false
+bool Player::addBlock(int num) {
     for(int i=0;i<num;i++) {
         // 检测顶部
-        for(int j=0;j<10;j++) { 
-            if(map[0][j]==1 && i!=num-1) {
-                fail = true;
-                return;
-            }
+        detectIsFail();
+        if(!getStatus()) {
+            return false;
         }
+        // for(int j=0;j<10;j++) { 
+        //     if(map[0][j]==1 && i!=num-1) {
+        //         fail = true;
+        //         return;
+        //     }
+        // }
         // 移动下面行
         for(int m=0; m<19; m++) {
             for(int n=0; n<10; n++) {
@@ -183,6 +198,7 @@ void Player::addBlock(int num) {
             }
         }
     }
+    return true;
 }
 
 // 生成新方块方块

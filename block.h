@@ -1,3 +1,4 @@
+#define _BLOCK 
 class Block{
 public:
     Block();  //初始化随机数   
@@ -5,7 +6,9 @@ public:
     void TurnBlock();//旋转方块： 顺时针
     int block[4][4];//存储生成方块
     int getColor(); //获取当前颜色 
-    void Block_to_block(int BlockType_form_[][4]); // 方块拷贝到block数组	
+    void Block_to_block(int BlockType_form_[][4]); // 方块拷贝到block数组
+    void ChangeBlock(int BlockType_form_1[][4],int BlockType_form_2[][4],
+    int BlockType_form_3[][4],int BlockType_form_4[][4]);  //配合TurnBlock()，进行方块的旋转
 private:
 	int Type; //记录block数组当前所存储的方块的类型（七大类） 
 	int Form; //记录block数组当前所存储的方块的旋转状态； 

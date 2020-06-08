@@ -1,5 +1,9 @@
 #include<iostream>
+
+#ifndef _BLOCK
 #include "block.h"
+#endif
+
 class Player {
 public:
     Player();//初始化玩家
@@ -9,9 +13,10 @@ public:
     std::string getName();// 获取玩家名字
     Block getNowBlock();// 获取目前方块
     Block getNextBlock();// 获取下一个方块
-    void addBlock(int num);//底部随机增加一行带空格的
+    bool addBlock(int num);//底部随机增加一行带空格的
     bool detectCollision(Block block, int x, int y);//检测碰撞：包含方块和方块，方块和边界
-    int detectReductsion();//检测消行：要有加分功能
+    int detectReductsion();//检测消行：有加分功能
+    void detectIsFail();// 检测顶部是否有方块
     void leftMoveBlock();//左移方块
     void rightMoveBlock();//右移方块
     bool moveDownBlock();//方块下落

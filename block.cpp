@@ -22,97 +22,96 @@ int Block::BlockType_1form_4[4][4]={{0,0,1,0},{0,0,1,0},{0,0,1,0},{0,0,1,0}}; //
    								                                              
  //-------------------------------------------------------------------------//   
  
-int Block::BlockType_2form_1[4][4]={{0,0,0,0},{1,0,0,0},{1,1,1,0},{0,0,0,0}};//    ■
-                                                                             //    ■■■
+int Block::BlockType_2form_1[4][4]={{0,0,0,0},{1,0,0,0},{1,1,1,0},{0,0,0,0}}; //    ■
+                                                                              //    ■ ■ ■
                                                                              
-int Block::BlockType_2form_2[4][4]={{0,0,0,0},{0,1,1,0},{0,1,0,0},{0,1,0,0}}; //    ■■
+int Block::BlockType_2form_2[4][4]={{0,0,0,0},{0,1,1,0},{0,1,0,0},{0,1,0,0}}; //    ■ ■
      							                                              //    ■
   								                                              //    ■
     
-int Block::BlockType_2form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{0,0,1,0}}; //    ■■■  
+int Block::BlockType_2form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{0,0,1,0}}; //    ■ ■ ■  
                                                                               //        ■ 
                                                                                
 int Block::BlockType_2form_4[4][4]={{0,0,0,0},{0,1,0,0},{0,1,0,0},{1,1,0,0}}; //     ■  
                                                                               //     ■
-                                                                              //   ■■
+                                                                              //   ■ ■
                                                                               
  //-------------------------------------------------------------------------// 
  
-int Block::BlockType_3form_1[4][4]={{0,0,0,0},{0,0,0,0},{0,0,1,0},{1,1,1,0}};//        ■    
-                                                                             //    ■■■
+int Block::BlockType_3form_1[4][4]={{0,0,0,0},{0,0,0,0},{0,0,1,0},{1,1,1,0}}; //        ■    
+                                                                              //    ■ ■ ■
                                                                              
-int Block::BlockType_3form_2[4][4]={{0,0,0,0},{0,1,0,0},{0,1,0,0},{0,1,1,0}};//    ■
-                                                                             //    ■
-                                                                             //    ■■
+int Block::BlockType_3form_2[4][4]={{0,0,0,0},{0,1,0,0},{0,1,0,0},{0,1,1,0}}; //    ■
+                                                                              //    ■
+                                                                              //    ■ ■
                                                                              
-int Block::BlockType_3form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{1,0,0,0}};//    ■■■
-                                                                             //    ■
+int Block::BlockType_3form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{1,0,0,0}}; //    ■ ■ ■
+                                                                              //    ■
                                                                              
-int Block::BlockType_3form_4[4][4]={{0,0,0,0},{1,1,0,0},{0,1,0,0},{0,1,0,0}};//    ■■    
-    							                                             //      ■
-   								                                             //      ■  
+int Block::BlockType_3form_4[4][4]={{0,0,0,0},{1,1,0,0},{0,1,0,0},{0,1,0,0}}; //    ■ ■    
+    							                                              //      ■
+   								                                              //      ■  
    								                                             
  //-------------------------------------------------------------------------// 
  
 int Block::BlockType_4form_1[4][4]={{0,0,0,0},{0,0,0,0},{0,1,0,0},{1,1,1,0}}; //      ■
-                                                                              //    ■■■
+                                                                              //    ■ ■ ■
                                                                               
 int Block::BlockType_4form_2[4][4]={{0,0,0,0},{0,1,0,0},{0,1,1,0},{0,1,0,0}}; //    ■
-                                                                              //    ■■
+                                                                              //    ■ ■
   								                                              //    ■ 
 
-int Block::BlockType_4form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{0,1,0,0}}; //    ■■■
+int Block::BlockType_4form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,1,0},{0,1,0,0}}; //    ■ ■ ■
                                                                               //      ■
  
 int Block::BlockType_4form_4[4][4]={{0,0,0,0},{0,1,0,0},{1,1,0,0},{0,1,0,0}}; //    ■
-    							                                              //  ■■
+    							                                              //  ■ ■
 							                                                  //    ■
   
  //-------------------------------------------------------------------------// 
  
-int Block::BlockType_5form_1[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}};//    ■■
-                                                                             //    ■■
+int Block::BlockType_5form_1[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}}; //    ■ ■
+                                                                              //    ■ ■
                                                                              
-int Block::BlockType_5form_2[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}};//    ■■
-                                                                             //    ■■
+int Block::BlockType_5form_2[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}}; //    ■ ■
+                                                                              //    ■ ■
                                                                              
-int Block::BlockType_5form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}};//    ■■
-                                                                             //    ■■
+int Block::BlockType_5form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}}; //    ■ ■
+                                                                              //    ■ ■
                                                                              
-int Block::BlockType_5form_4[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}};//    ■■
-                                                                             //    ■■
+int Block::BlockType_5form_4[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{1,1,0,0}}; //    ■ ■
+                                                                              //    ■ ■
  
  //-------------------------------------------------------------------------// 
    
-int Block::BlockType_6form_1[4][4]={{0,0,0,0},{0,0,0,0},{0,1,1,0},{1,1,0,0}};//      ■■
-    							                                             //    ■■
+int Block::BlockType_6form_1[4][4]={{0,0,0,0},{0,0,0,0},{0,1,1,0},{1,1,0,0}}; //      ■ ■
+    							                                              //    ■ ■
     							                                             
-int Block::BlockType_6form_2[4][4]={{0,0,0,0},{1,0,0,0},{1,1,0,0},{0,1,0,0}};//    ■
-   								                                             //    ■■
-   								                                             //      ■
+int Block::BlockType_6form_2[4][4]={{0,0,0,0},{1,0,0,0},{1,1,0,0},{0,1,0,0}}; //    ■
+   								                                              //    ■ ■
+   								                                              //      ■
    								                                             
-int Block::BlockType_6form_3[4][4]={{0,0,0,0},{0,0,0,0},{0,1,1,0},{1,1,0,0}};//      ■■
-    							                                             //    ■■
+int Block::BlockType_6form_3[4][4]={{0,0,0,0},{0,0,0,0},{0,1,1,0},{1,1,0,0}}; //      ■ ■
+    							                                              //    ■ ■
     							                                             
-int Block::BlockType_6form_4[4][4]={{0,0,0,0},{1,0,0,0},{1,1,0,0},{0,1,0,0}};//    ■
-   								                                             //    ■■
-   								                                             //      ■
+int Block::BlockType_6form_4[4][4]={{0,0,0,0},{1,0,0,0},{1,1,0,0},{0,1,0,0}}; //    ■
+   								                                              //    ■ ■
+   								                                              //      ■
  
  //-------------------------------------------------------------------------// 
-int Block::BlockType_7form_1[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{0,1,1,0}}; //      ■■
-    							                                              //    ■■
+int Block::BlockType_7form_1[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{0,1,1,0}}; //      ■ ■
+    							                                              //    ■ ■
     							                                              
 int Block::BlockType_7form_2[4][4]={{0,0,0,0},{0,0,1,0},{0,1,1,0},{0,1,0,0}}; //    ■
-   								                                              //    ■■
+   								                                              //    ■ ■
    								                                              //      ■
    								                                              
-int Block::BlockType_7form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{0,1,1,0}}; //      ■■
-    							                                              //    ■■
+int Block::BlockType_7form_3[4][4]={{0,0,0,0},{0,0,0,0},{1,1,0,0},{0,1,1,0}}; //      ■ ■
+    							                                              //    ■ ■
     							                                              
 int Block::BlockType_7form_4[4][4]={{0,0,0,0},{0,0,1,0},{0,1,1,0},{0,1,0,0}}; //    ■
-   								                                              //    ■■
+   								                                              //    ■ ■
    								                                              //      ■
- 
  
  //-------------------------------------------------------------------------// 
 Block::Block() { 
@@ -329,140 +328,61 @@ void Block::RandBlock(){   //随机生成方块+颜色
 	default: break;		
 	}
 }
+void Block::ChangeBlock(int BlockType_form_1[][4],int BlockType_form_2[][4],
+    int BlockType_form_3[][4],int BlockType_form_4[][4]){  //配合TurnBlock()，进行方块的旋转
+    if(Form == 1){
+            Block_to_block(BlockType_form_2);
+                Form = 2;
+        }
+    else if(Form == 2){
+            Block_to_block(BlockType_form_3);
+                Form = 3;
+        }
+    else if(Form == 3){
+            Block_to_block(BlockType_form_4);
+                Form = 4;
+        }
+    else if(Form == 4){
+            Block_to_block(BlockType_form_1);
+                Form = 1;
+        }
+}
 void Block::TurnBlock(){//旋转方块：顺时针 
 	switch(Type){
 		case 1:{
-		    if(Form == 1){
-    		    Block_to_block(BlockType_1form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_1form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_1form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_1form_1);
-				Form = 1;		
-			} 	
+		   ChangeBlock(BlockType_1form_1,BlockType_1form_2,
+    BlockType_1form_3,BlockType_1form_4);
 			break;
 		}
 			
 		case 2:{
-			if(Form == 1){
-    		    Block_to_block(BlockType_2form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_2form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_2form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_2form_1);
-				Form = 1;		
-			} 
+			ChangeBlock(BlockType_2form_1,BlockType_2form_2,
+    BlockType_2form_3,BlockType_2form_4);
 			break;
 		}
 		case 3:{
-			if(Form == 1){
-    		    Block_to_block(BlockType_3form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_3form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_3form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_3form_1);
-				Form = 1;		
-			} 
+		ChangeBlock(BlockType_3form_1,BlockType_3form_2,
+    BlockType_3form_3,BlockType_3form_4);
 			break;
 		}
 		case 4:{
-			if(Form == 1){
-    		    Block_to_block(BlockType_4form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_4form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_4form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_4form_1);
-				Form = 1;		
-			} 
+			ChangeBlock(BlockType_4form_1,BlockType_4form_2,
+    BlockType_4form_3,BlockType_4form_4);
 			break;
 		}
 		case 5:{	
-			if(Form == 1){
-    		    Block_to_block(BlockType_5form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_5form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_5form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_5form_1);
-				Form = 1;		
-			} 
+			ChangeBlock(BlockType_5form_1,BlockType_5form_2,
+    BlockType_5form_3,BlockType_5form_4);
 			break;
 		}
 		case 6:{
-			if(Form == 1){
-    		    Block_to_block(BlockType_6form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_6form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_6form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_6form_1);
-				Form = 1;		
-			} 
+		ChangeBlock(BlockType_6form_1,BlockType_6form_2,
+    BlockType_6form_3,BlockType_6form_4);
 			break;
 		}
 		case 7:{
-			if(Form == 1){
-    		    Block_to_block(BlockType_7form_2);
-				Form = 2;	
-			} 
-			else if(Form == 2){
-                Block_to_block(BlockType_7form_3);
-				Form = 3;		
-			} 
-			else if(Form == 3){
-                Block_to_block(BlockType_7form_4);
-				Form = 4;		
-			} 
-			else if(Form == 4){
-                Block_to_block(BlockType_7form_1);
-				Form = 1;		
-			}  
+			ChangeBlock(BlockType_7form_1,BlockType_7form_2,
+    BlockType_7form_3,BlockType_7form_4);
 			break;
 		}
 		default: break;

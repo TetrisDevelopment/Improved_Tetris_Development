@@ -1,6 +1,8 @@
 #include <windows.h>
 #include<string>
+#ifndef _BLOCK
 #include"block.h"
+#endif
 using namespace std;
 class Interface {
 public:
