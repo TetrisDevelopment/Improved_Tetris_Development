@@ -4,10 +4,11 @@
 using namespace std;
 class Interface {
 public:
-    Interface(){
+    Interface(){ //获得输出句柄
        hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     }
     void initialWindow();//初始化窗口
+    void initialCovor();//绘制初始封面
     void initialViewOnePlayer();//初始化map
     void initialViewTwoPlayer();//初始化map
     void printPointPlayer1(int point);//显示玩家1分数

@@ -6,23 +6,46 @@ int Interface::vic[6][5]={ {0,0,1,0,0},
                 {0,1,1,1,0},
                 {1,1,1,1,1},
                 {0,1,0,1,0},
-                {0,0,1,0,0},
+                {0,0,1,0,0},               
                 {0,0,1,0,0}};
-void Interface::initialWindow()
-{
-    COORD size = {100, 30};
-    SetConsoleScreenBufferSize(hOut, size);//更改指定缓冲区大小
-    SMALL_RECT rect = {0, 0, 99, 29};
-    SetConsoleWindowInfo(hOut, true, &rect);//设置控制台窗口信息
+
+void Interface::initialWindow(){   
+    system("cls");//清屏
+    system("mode con cols=100 lines=30"); //设置窗口大小
     CONSOLE_CURSOR_INFO cursor_info = {1, 0};//光标信息
     SetConsoleCursorInfo(hOut, &cursor_info);//设置光标不可见
-    SetConsoleTitle("我罗斯");//设置控制台窗口标题
+    system("title 我罗斯"); //设置控制台窗口标题
 }
 void Interface::gotoXY(int x, int y){
     COORD pos;
     pos.X = x;
     pos.Y = y;
     SetConsoleCursorPosition(hOut, pos);//设置光标位置
+}
+void Interface::initialCovor(){
+    SetConsoleTextAttribute(hOut,3);
+    int mark[9][31]={ 0,0,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1,0,
+                      0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,0,0,
+                      0,0,1,0,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,1,0,1,0,1,1,1,1,
+                      1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1,0,1,0,1,0,
+                      0,0,1,0,0,1,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,1,0,1,0,1,0,1,0,
+                      0,0,1,1,0,1,0,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,1,1,1,0,1,0,1,0,
+                      1,1,1,0,0,0,1,0,0,0,0,1,1,0,1,0,1,1,0,0,0,0,0,1,0,1,0,1,0,1,0,
+                      0,1,1,0,0,1,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,1,1,1,0,1,0,
+                      0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0};
+    for(int i=0;i<9;i++){
+        gotoXY(18,i+5);
+        for(int j=0;j<31;j++){
+            if(mark[i][j]==1) cout<<"■";
+            else cout<<"  ";
+        }
+        cout<<endl;
+    }
+    SetConsoleTextAttribute(hOut,14);
+    gotoXY(33,20);
+    cout << "Press any key to start... ";
+    gotoXY(33,21);
+    system("pause");
 }
 void Interface::initialViewOnePlayer(){
     SetConsoleTextAttribute(hOut,15);//设置为白色
