@@ -135,7 +135,7 @@ int Player::detectReductsion() {
         }
         if(tempcount == 10) {
             // 增加分数
-            point+=100;
+            point+=10;
             // 增加消除行数
             count++;
             // 移动上面的行
