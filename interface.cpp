@@ -283,7 +283,7 @@ void Interface::drawNowBlock2(Block t,int x,int y){
     SetConsoleTextAttribute(hOut,t.getColor());
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(t.block[i][j]==1&&x+1>=0){ 
+            if(t.block[i][j]==1&&x+i>=0){ 
                 gotoXY(2*(y+j)+67,x+i);
                 cout << "¡ö";
             }
@@ -293,7 +293,7 @@ void Interface::drawNowBlock2(Block t,int x,int y){
 void Interface::deleteBlock1(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(tempBlock.block[i][j]==1&&x+1>=0){ 
+            if(tempBlock.block[i][j]==1&&x+i>=0){ 
                 gotoXY(2*(y+j)+22,x+i);
                 cout <<"  ";
             }
@@ -303,7 +303,7 @@ void Interface::deleteBlock1(){
 void Interface::deleteBlock2(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(tempBlock.block[i][j]==1&&x+1>=0){  
+            if(tempBlock.block[i][j]==1&&x+i>=0){  
                 gotoXY(2*(y+j)+67,x+i);
                 cout <<"  ";
             }
