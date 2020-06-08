@@ -11,6 +11,9 @@ public:
     }
     void initialWindow();//初始化窗口
     void initialCovor();//绘制初始封面
+    void selectPart();//模式选择静态部分
+    void selectKey1();//键位于单人模式输出
+    void selectKey2();//键位于双人模式时输出
     void initialViewOnePlayer();//初始化map
     void initialViewTwoPlayer();//初始化map
     void printPointPlayer1(int point);//显示玩家1分数

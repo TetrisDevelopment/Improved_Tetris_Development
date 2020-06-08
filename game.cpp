@@ -1,10 +1,9 @@
 #include "game.h"
-#include "interface.h"
 #include <iostream>
 #include <conio.h>
 using namespace std;
 
-Game::Game() {
+Game::Game(){
     itfs.initialWindow();
     speed = 50;
 }
@@ -34,22 +33,24 @@ void Game::gameControl() {
 
 int Game::selectGameType() {
     // 方案1
-    int type;
+     /*int type;
     cin >> type;
-    return type;
-
+    return type;*/
     // 方案2
     // 渲染
+    int type=1;
     while(1) {
-        if(_kbhit()) {
+        if(_kbhit()){
             int key=_getch();
-            if(key == 115) {
-                type = 1;
+            if(key==72&&type!=1){
+                itfs.selectKey1();
+                type=1;
             }
-            else if(key == 119) {
-                type = 2;
+            if(key==80&&type!=2){
+                itfs.selectKey2();
+                type=2;
             }
-            else if(key == 13) {
+            if(key==13){
                 return type;
             }
         }
@@ -131,4 +132,4 @@ string Game::setName() {
     cin >> name;
     return name;
 }
-
+void Game::twoPlayers(){}

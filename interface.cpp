@@ -42,10 +42,45 @@ void Interface::initialCovor(){
         cout<<endl;
     }
     SetConsoleTextAttribute(hOut,14);
-    gotoXY(33,20);
-    cout << "Press any key to start... ";
-    gotoXY(33,21);
+    gotoXY(36,20);
+    cout<<"Press any key to start... ";
+    gotoXY(36,21);
     system("pause");
+}
+void Interface::selectPart(){
+    gotoXY(36,20);
+    cout<<"                          ";
+    gotoXY(36,21);
+    cout<<"                          ";
+    gotoXY(23,20);
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"请选择游戏模式：";
+    gotoXY(23,22);
+    cout<<"(上下键选择，回车确定)";
+    gotoXY(60,18);
+    SetConsoleTextAttribute(hOut,0|16|32|64);//设置字体及背景颜色
+    cout<<"单人模式";
+    gotoXY(60,24);
+    SetConsoleTextAttribute(hOut,15);
+    cout<<"双人模式";
+
+}
+void Interface::selectKey1(){//键位于单人模式输出
+    gotoXY(60,18);
+    SetConsoleTextAttribute(hOut,0|16|32|64);//设置字体及背景颜色
+    cout<<"单人模式";
+    gotoXY(60,24);
+    SetConsoleTextAttribute(hOut,15);
+    cout<<"双人模式";
+}
+void Interface::selectKey2(){//键位于双人模式时输出
+    gotoXY(60,18);
+    SetConsoleTextAttribute(hOut,15);
+    cout<<"单人模式";
+    gotoXY(60,24);
+    SetConsoleTextAttribute(hOut,0|16|32|64);
+    cout<<"双人模式";
+    //设置字体及背景颜色
 }
 void Interface::initialViewOnePlayer(){
     SetConsoleTextAttribute(hOut,15);//设置为白色
