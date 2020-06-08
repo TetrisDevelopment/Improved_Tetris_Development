@@ -27,8 +27,9 @@ public:
     void drawNextBlock2(Block t);
     void drawNowBlock1(Block t,int x,int y);//画现在游戏池内的方块
     void drawNowBlock2(Block t,int x,int y);
-    /*void deleteBlock1(int block[4][4],int x, int y);//将游戏池中已打印方块消除
-    void deleteBlock2(int block[4][4],int x, int y);*/
+    void deleteBlock1();//将游戏池中已打印方块消除
+    void deleteBlock2();
+    void refreshBlock(int x,int y,Block temp);//更新移动前方块信息
     void clearMap1(int map[20][10]);//将map清空
     void clearMap2(int map[20][10]);
     void printMap1(int map[20][10]);//打印map
@@ -38,6 +39,8 @@ public:
     static int vic[6][5];
 private:
     HANDLE hOut;
+    Block tempBlock;
+    int x,y;
 };
 //单人模式和双人模式player1均调用1系列函数
 //双人模式player2调用2系列函数

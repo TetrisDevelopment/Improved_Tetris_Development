@@ -290,26 +290,31 @@ void Interface::drawNowBlock2(Block t,int x,int y){
         }
     }
 };
-/*void Interface::deleteBlock1(int block[4][4],int x, int y){
+void Interface::deleteBlock1(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1&&x+1>=0){ 
+            if(tempBlock.block[i][j]==1&&x+1>=0){ 
                 gotoXY(2*(y+j)+22,x+i);
                 cout <<"  ";
             }
         }
     }
 };//将游戏池中已打印方块消除
-void Interface::deleteBlock2(int block[4][4],int x, int y){
+void Interface::deleteBlock2(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(block[i][j]==1&&x+1>=0){  
+            if(tempBlock.block[i][j]==1&&x+1>=0){  
                 gotoXY(2*(y+j)+67,x+i);
                 cout <<"  ";
             }
         }
     }
-};*/
+};
+void Interface::refreshBlock(int x1,int y1,Block temp){
+    x=x1;
+    y=y1;
+    tempBlock=temp;
+}
 void Interface::printMap1(int map[20][10]){
     SetConsoleTextAttribute(hOut,15);
     for(int i=0;i<20;i++){
