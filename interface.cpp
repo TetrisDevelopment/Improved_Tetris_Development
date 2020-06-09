@@ -293,8 +293,8 @@ void Interface::drawNowBlock2(Block t,int x,int y){
 void Interface::deleteBlock1(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(tempBlock.block[i][j]==1&&x+i>=0){ 
-                gotoXY(2*(y+j)+22,x+i);
+            if(tempBlock1.block[i][j]==1&&x1+i>=0){ 
+                gotoXY(2*(y1+j)+22,x1+i);
                 cout <<"  ";
             }
         }
@@ -303,17 +303,22 @@ void Interface::deleteBlock1(){
 void Interface::deleteBlock2(){
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            if(tempBlock.block[i][j]==1&&x+i>=0){  
-                gotoXY(2*(y+j)+67,x+i);
+            if(tempBlock2.block[i][j]==1&&x2+i>=0){  
+                gotoXY(2*(y2+j)+67,x2+i);
                 cout <<"  ";
             }
         }
     }
 };
-void Interface::refreshBlock(int x1,int y1,Block temp){
-    x=x1;
-    y=y1;
-    tempBlock=temp;
+void Interface::refreshBlock1(int x,int y,Block temp){
+    x1=x;
+    y1=y;
+    tempBlock1=temp;
+}
+void Interface::refreshBlock2(int x,int y,Block temp){
+    x2=x;
+    y2=y;
+    tempBlock2=temp;
 }
 void Interface::printMap1(int map[20][10]){
     SetConsoleTextAttribute(hOut,15);
