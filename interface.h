@@ -14,6 +14,7 @@ public:
     void selectPart();//模式选择静态部分
     void selectKey1();//键位于单人模式输出
     void selectKey2();//键位于双人模式时输出
+    void getName();//玩家名输入界面
     void initialViewOnePlayer();//初始化map
     void initialViewTwoPlayer();//初始化map
     void printPointPlayer1(int point);//显示玩家1分数

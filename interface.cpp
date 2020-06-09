@@ -81,8 +81,34 @@ void Interface::selectKey2(){//键位于双人模式时输出
     SetConsoleTextAttribute(hOut,0|16|32|64);
     cout<<"双人模式";
     //设置字体及背景颜色
+    SetConsoleTextAttribute(hOut,15);
+}
+void Interface::getName(){
+    gotoXY(23,20);
+    cout<<"                           ";
+    gotoXY(23,22);
+    cout<<"                           ";
+    gotoXY(60,18);
+    cout<<"              ";
+    gotoXY(60,24);
+    cout<<"              ";
+    gotoXY(23,20);
+    SetConsoleTextAttribute(hOut,14);
+    cout<<"请输入玩家名:";
+    SetConsoleTextAttribute(hOut,15);
+    gotoXY(36,21);
+    cout<<"■■■■■■■■■■■■"<<endl;
+    gotoXY(36,20);
+    cout<<"                          ";
+    gotoXY(36,20);
+    CONSOLE_CURSOR_INFO cursor_info = {100,1};//光标信息
+    SetConsoleCursorInfo(hOut,&cursor_info);//设置光标可见
+
 }
 void Interface::initialViewOnePlayer(){
+    system("cls");
+    CONSOLE_CURSOR_INFO cursor_info = {1, 0};//光标信息
+    SetConsoleCursorInfo(hOut, &cursor_info);//设置光标不可见
     SetConsoleTextAttribute(hOut,15);//设置为白色
     for(int i=0;i<20;i++){
         cout<<"                    ■                    ■"<<endl;
@@ -101,7 +127,6 @@ void Interface::initialViewOnePlayer(){
     cout<<"A：控制方块向右移动"<<endl;
     cout<<"D：控制方块向右移动"<<endl;  
     cout<<"[ 空格 ]：暂停游戏"<<endl;
-    cout<<"X：重新开始游戏 "<<endl;
     gotoXY(0,23);
     SetConsoleTextAttribute(hOut,12);
     cout<<"■■单人模式■■"<<endl;
@@ -109,6 +134,9 @@ void Interface::initialViewOnePlayer(){
     cout<<"By 余佳硕 吕航 阙嘉毅"<<endl;
 }
 void Interface::initialViewTwoPlayer(){
+     system("cls");
+    CONSOLE_CURSOR_INFO cursor_info = {1, 0};//光标信息
+    SetConsoleCursorInfo(hOut, &cursor_info);//设置光标不可见
     SetConsoleTextAttribute(hOut,15);//设置为白色
     for(int i=0;i<20;i++){
         cout<<"                    ■                    ■                     ■                    ■"<<endl;
@@ -127,7 +155,6 @@ void Interface::initialViewTwoPlayer(){
     cout<<"A：控制方块向右移动"<<endl;
     cout<<"D：控制方块向右移动"<<endl;  
     cout<<"[ 空格 ]：暂停游戏"<<endl;
-    cout<<"X：重新开始游戏 "<<endl;
     SetConsoleTextAttribute(hOut,15);
     gotoXY(44,0);
     cout<<"■玩家2："<<endl<<endl;
@@ -148,8 +175,8 @@ void Interface::initialViewTwoPlayer(){
     cout<<"→：控制方块向右移动";  
     gotoXY(44,17);
     cout<<"[ 空格 ]：暂停游戏";
-    gotoXY(44,18);
-    cout<<"X：重新开始游戏 "<<endl;
+    /*gotoXY(44,18);
+    cout<<"X：重新开始游戏 "<<endl;*/
     gotoXY(0,23);
     SetConsoleTextAttribute(hOut,11);
     cout<<"■■双人模式■■"<<endl;
