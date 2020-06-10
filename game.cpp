@@ -111,17 +111,17 @@ void Game::onePlayer(Player player) {
             if(key==115) {
                 // s
                 if(player.moveDownBlock()) {
-                    player.detectIsFail();
-                    if(player.getStatus()) {
-                        // ‰÷»æ ß∞‹“≥√Ê
-                        itfs.gameResult(player.getName(), player.getPoint(), 1);
-                        return;
-                    }
-                    player.makeNewBlock();
-                    itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
-                    itfs.drawNextBlock1(player.getNextBlock());
-                    itfs.printMap1(player.map);
-                    itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+                player.detectIsFail();
+                if(player.getStatus()) {
+                    // ‰÷»æ ß∞‹“≥√Ê
+                    itfs.gameResult(player.getName(), player.getPoint(), 1);
+                    return;
+                }
+                player.makeNewBlock();
+                itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
+                itfs.drawNextBlock1(player.getNextBlock());
+                itfs.printMap1(player.map);
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
                 }
             }
             else if(key==119) {
@@ -214,6 +214,12 @@ void Game::twoPlayers(Player player1, Player player2) {
             // œ¬¬‰
             if(key==115) {
                 if(player1.moveDownBlock()) {
+                    player1.detectIsFail();
+                    if(player1.getStatus()) {
+                        // ‰÷»æ ß∞‹“≥√Ê
+                        itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                        return;
+                    }
                     player1.makeNewBlock();
                     itfs.refreshBlock1(player1.getX(), player1.getY(), player1.getNowBlock());
                     itfs.drawNextBlock1(player1.getNextBlock());
@@ -224,6 +230,12 @@ void Game::twoPlayers(Player player1, Player player2) {
             }
             else if(key == 80) {
                 if(player2.moveDownBlock()) {
+                    player2.detectIsFail();
+                    if(player2.getStatus()) {
+                        // ‰÷»æ ß∞‹“≥√Ê
+                        itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                        return;
+                    }
                     player2.makeNewBlock();
                     itfs.refreshBlock2(player2.getX(), player2.getY(), player2.getNowBlock());
                     itfs.drawNextBlock2(player2.getNextBlock());
@@ -302,6 +314,12 @@ void Game::twoPlayers(Player player1, Player player2) {
         // ÷ÿ∏¥…œ√Ê
         if(--temptime == 0) {
             if(player1.moveDownBlock()) {
+                player1.detectIsFail();
+                if(player1.getStatus()) {
+                    // ‰÷»æ ß∞‹“≥√Ê
+                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                    return;
+                }
                 player1.makeNewBlock();
                 itfs.refreshBlock1(player1.getX(), player1.getY(), player1.getNowBlock());
                 itfs.drawNextBlock1(player1.getNextBlock());
@@ -309,6 +327,12 @@ void Game::twoPlayers(Player player1, Player player2) {
                 itfs.printMap1(player1.map);
             }
             if(player2.moveDownBlock()) {
+                player2.detectIsFail();
+                if(player2.getStatus()) {
+                    // ‰÷»æ ß∞‹“≥√Ê
+                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                    return;
+                }
                 player2.makeNewBlock();
                 itfs.refreshBlock2(player2.getX(), player2.getY(), player2.getNowBlock());
                 itfs.drawNextBlock2(player2.getNextBlock());
