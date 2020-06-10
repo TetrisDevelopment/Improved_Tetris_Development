@@ -2,12 +2,12 @@
 #include<iostream>
 #include <conio.h>                  //┃■
 using namespace std;
-int Interface::vic[6][5]={ {0,0,1,0,0},
+/*int Interface::vic[6][5]={ {0,0,1,0,0},
                 {0,1,1,1,0},
                 {1,1,1,1,1},
                 {0,1,0,1,0},
                 {0,0,1,0,0},               
-                {0,0,1,0,0}};
+                {0,0,1,0,0}};*/
 
 void Interface::initialWindow(){   
     system("cls");//清屏
@@ -103,6 +103,49 @@ void Interface::getName(){
     gotoXY(36,20);
     CONSOLE_CURSOR_INFO cursor_info = {100,1};//光标信息
     SetConsoleCursorInfo(hOut,&cursor_info);//设置光标可见
+}
+//游戏结果(单人type为1/双人type为2)
+void Interface::gameResult(string name,int score,int type){
+    SetConsoleTextAttribute(hOut,14|32|64|128);
+        gotoXY(21,5);
+        for(int i=0;i<50;i++) cout<<" ";
+        for(int i=0;i<15;i++){
+            gotoXY(21,i+5);
+            cout<<"  ";
+        }
+        for(int i=0;i<15;i++){
+            gotoXY(71,i+5);
+            cout<<"  ";
+        }
+        gotoXY(21,19);
+        for(int i=0;i<50;i++) cout<<" ";
+        SetConsoleTextAttribute(hOut,0);
+        for(int i=1;i<14;i++){
+            gotoXY(23,i+5);
+            for(int j=0;j<48;j++){
+                cout<<" ";
+            }
+        }
+        SetConsoleTextAttribute(hOut,15);
+        gotoXY(41,6);
+        cout<<"GAME OVER";
+        gotoXY(42,7);
+        cout<<"游戏结束";
+        gotoXY(30,9);
+        cout<<"最终结果：";
+        gotoXY(44,11);
+        if(type==1)
+        cout<<"Player: "<<name;
+        else if(type==2)
+        cout<<"Winner: "<<name;
+        gotoXY(44,13);
+        cout<<"Score:  "<<score;
+        gotoXY(30,15);
+        cout<<"是否再来一局：";
+        gotoXY(33,17);
+        cout<<"YES (Y键)";
+        gotoXY(48,17);
+        cout<<"NO (N键)";
 
 }
 void Interface::initialViewOnePlayer(){
@@ -209,7 +252,7 @@ void Interface::printPointPlayer1(int point){ //显示玩家1分数
     gotoXY(52,2);
     cout<<point<<endl;
  }
-void Interface::player1Victory(){
+/*void Interface::player1Victory(){
     gotoXY(26,22);
     SetConsoleTextAttribute(hOut,12);
     for(int i=0;i<2;i++){
@@ -235,8 +278,8 @@ void Interface::player1Victory(){
         }
         cout<<endl;
     }   
-}
-void Interface::player2Victory(){
+}*/
+/*void Interface::player2Victory(){
     gotoXY(71,22);
     SetConsoleTextAttribute(hOut,12);
     for(int i=0;i<2;i++){
@@ -262,7 +305,7 @@ void Interface::player2Victory(){
         }
         cout<<endl;
     }   
-}
+}*/
 void Interface::drawNextBlock1(Block t){
     for(int i=0;i<4;i++){
         gotoXY(2,6+i);

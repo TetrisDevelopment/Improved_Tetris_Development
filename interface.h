@@ -15,6 +15,7 @@ public:
     void selectKey1();//键位于单人模式输出
     void selectKey2();//键位于双人模式时输出
     void getName();//玩家名输入界面
+    void gameResult(string name,int score,int type);//游戏结果(单人type为1/双人type为2)
     void initialViewOnePlayer();//初始化map
     void initialViewTwoPlayer();//初始化map
     void printPointPlayer1(int point);//显示玩家1分数
@@ -22,8 +23,8 @@ public:
     void printNamePlayer1(string name);//显示玩家1名字
     void printNamePlayer2(string name);//显示玩家2名字
     void gotoXY(int x, int y);//定位光标
-    void player1Victory();//玩家胜利效果
-    void player2Victory();//玩家胜利效果
+    //void player1Victory();//玩家胜利效果
+    //void player2Victory();//玩家胜利效果
     void drawNextBlock1(Block t);//画下一个方块
     void drawNextBlock2(Block t);
     void drawNowBlock1(Block t,int x,int y);//画现在游戏池内的方块
