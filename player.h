@@ -26,6 +26,7 @@ public:
     int map[20][10];//游戏区域
     int getX();
     int getY();
+    void restartPlayer();
 private:
     std::string name;//玩家名字
     int point;//得分

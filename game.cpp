@@ -159,14 +159,6 @@ void Game::onePlayer(Player player) {
                 if(player.getStatus()) {
                     // ‰÷»æ ß∞‹“≥√Ê
                     itfs.gameResult(player.getName(), player.getPoint(), 1);
-                    while(1) {
-                        if(_kbhit()) {
-                            int key = _getch();
-                            if(key == 110) {
-                                return;
-                            }
-                        }
-                    }
                     return;
                 }
                 player.makeNewBlock();
