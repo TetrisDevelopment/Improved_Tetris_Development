@@ -38,8 +38,9 @@ bool Player::getStatus() {
 // 检测顶部是否有方块
 void Player::detectIsFail() {
     for(int i = 0; i < 10; i++) {
-        if(map[0][i] == 1) {
+        if(this->map[0][i] == 1) {
             fail = true;
+            cout << map[0][i] << endl;
             return;
         }
     }
@@ -201,9 +202,6 @@ void Player::makeNewBlock() {
     posY=4;
     blockNow = blockNext;
     blockNext.RandBlock();
-    if(detectCollision(blockNow, posX, posY)) {
-        fail = true;
-    }
 }
 
 int Player::getX() {
