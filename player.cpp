@@ -22,14 +22,13 @@ void Player::restartPlayer() {
     memset(map, 0, sizeof(map));
     blockNow.RandBlock();
     blockNext.RandBlock();
-    name = "ÕÊº“";
     posX=-3;
     posY=4;
 }
 
 // …Ë÷√√˚◊÷
 void Player::setPlayerName(string name) {
-    if(name.size() <= 6) {
+    if(name.size() <= 10) {
         this->name = name;
     }
     else {
