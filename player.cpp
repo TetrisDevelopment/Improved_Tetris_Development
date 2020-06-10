@@ -162,6 +162,12 @@ void Player::turnBlock() {
 // 如果不能增加返回false
 bool Player::addBlock(int num) {
     for(int i=0;i<num;i++) {
+        for(int t=0;t<10;t++) {
+            if(map[0][t]>0) {
+                fail = true;
+                return false;
+            }
+        }
         // 移动下面行
         for(int m=0; m<19; m++) {
             for(int n=0; n<10; n++) {
