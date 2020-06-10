@@ -15,6 +15,18 @@ Player::Player() {
     posY=4;
 }
 
+// 重新开始
+void Player::restartPlayer() {
+    point = 0;
+    fail = false;
+    memset(map, 0, sizeof(map));
+    blockNow.RandBlock();
+    blockNext.RandBlock();
+    name = "玩家";
+    posX=-3;
+    posY=4;
+}
+
 // 设置名字
 void Player::setPlayerName(string name) {
     if(name.size() <= 6) {
@@ -40,7 +52,6 @@ void Player::detectIsFail() {
     for(int i = 0; i < 10; i++) {
         if(this->map[0][i] == 1) {
             fail = true;
-            cout << map[0][i] << endl;
             return;
         }
     }
