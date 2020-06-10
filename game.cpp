@@ -10,6 +10,7 @@ Game::Game(){
 
 void Game::gameControl() {
     // 选择模式
+    itfs.initialCovor();
     int type = selectGameType();
     if(type == 1) {
         // 输入一个玩家的名字
@@ -25,7 +26,7 @@ void Game::gameControl() {
         player1.setPlayerName(setName());
         // 渲染
         player2.setPlayerName(setName());
-        twoPlayers();
+        twoPlayers(player1, player2);
     }
 
 
@@ -38,12 +39,18 @@ int Game::selectGameType() {
     return type;*/
     // 方案2
     // 渲染
+    itfs.selectPart();
+    itfs.selectKey1();
     int type=1;
     while(1) {
         if(_kbhit()){
             int key=_getch();
             if(key==72&&type!=1){
                 itfs.selectKey1();
+
+
+
+
                 type=1;
             }
             if(key==80&&type!=2){
@@ -59,6 +66,7 @@ int Game::selectGameType() {
 
 void Game::onePlayer(Player player) {
     int temptime = speed;
+    system("cls");
     itfs.initialViewOnePlayer();
     itfs.printNamePlayer1(player.getName());
     itfs.printPointPlayer1(player.getPoint());
@@ -70,11 +78,15 @@ void Game::onePlayer(Player player) {
                 // s
                 if(player.moveDownBlock()) {
                     player.detectIsFail();
-                    if(!player.getStatus()) {
+                    if(player.getStatus()) {
                         // 渲染失败页面
                         return;
                     }
                     player.makeNewBlock();
+                    itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
+                    itfs.drawNextBlock1(player.getNextBlock());
+                    itfs.printMap1(player.map);
+                    itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
                 }
             }
             else if(key==119) {
@@ -97,31 +109,51 @@ void Game::onePlayer(Player player) {
             //         return;
             //     }
             // }
-            player.detectReductsion();
-            // 清除map区域
-            itfs.clearMap1(player.map);
-            // 画方块
-            itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
-            // 画map
-            itfs.printMap1(player.map);
-            // 画分数
-            itfs.printPointPlayer1(player.getPoint());
+            if(player.detectReductsion()) {
+                // 清除map区域
+                itfs.clearMap1(player.map);
+                // 画方块
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+                // 画map
+                itfs.printMap1(player.map);
+                // 画分数
+                itfs.printPointPlayer1(player.getPoint());
+            }
+            else {
+                itfs.deleteBlock1();
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+                itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
+            }
         }
         Sleep(20);
         if(--temptime == 0) {
             if(player.moveDownBlock()) {
                 player.detectIsFail();
-                if(!player.getStatus()) {
+                if(player.getStatus()) {
                     // 渲染失败页面
                     return;
                 }
                 player.makeNewBlock();
+                itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
+                itfs.drawNextBlock1(player.getNextBlock());
+                itfs.printMap1(player.map);
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
             }
-            player.detectReductsion();
-            itfs.clearMap1(player.map);
-            itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
-            itfs.printMap1(player.map);
-            itfs.printPointPlayer1(player.getPoint());
+            if(player.detectReductsion()) {
+                // 清除map区域
+                itfs.clearMap1(player.map);
+                // 画方块
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+                // 画map
+                itfs.printMap1(player.map);
+                // 画分数
+                itfs.printPointPlayer1(player.getPoint());
+            }
+            else {
+                itfs.deleteBlock1();
+                itfs.drawNowBlock1(player.getNowBlock(), player.getX(), player.getY());
+                itfs.refreshBlock1(player.getX(), player.getY(), player.getNowBlock());
+            }
             temptime = speed;
         }
     }
@@ -132,4 +164,6 @@ string Game::setName() {
     cin >> name;
     return name;
 }
-void Game::twoPlayers(){}
+void Game::twoPlayers(Player player1, Player player2) {
+    
+}

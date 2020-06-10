@@ -32,12 +32,7 @@ int Player::getPoint() {
 
 // 获取玩家状态
 bool Player::getStatus() {
-    if(fail) {
-        return false;
-    }
-    else {
-        return true;
-    }
+    return fail;
 }
 
 // 检测顶部是否有方块
@@ -45,6 +40,7 @@ void Player::detectIsFail() {
     for(int i = 0; i < 10; i++) {
         if(map[0][i] == 1) {
             fail = true;
+            return;
         }
     }
 }
@@ -133,7 +129,7 @@ int Player::detectReductsion() {
                 tempcount++;
             }
         }
-        if(tempcount == 10) {
+        if(tempcount >= 10) {
             // 增加分数
             point+=10;
             // 增加消除行数
@@ -166,17 +162,6 @@ void Player::turnBlock() {
 // 如果不能增加返回false
 bool Player::addBlock(int num) {
     for(int i=0;i<num;i++) {
-        // 检测顶部
-        detectIsFail();
-        if(!getStatus()) {
-            return false;
-        }
-        // for(int j=0;j<10;j++) { 
-        //     if(map[0][j]==1 && i!=num-1) {
-        //         fail = true;
-        //         return;
-        //     }
-        // }
         // 移动下面行
         for(int m=0; m<19; m++) {
             for(int n=0; n<10; n++) {
