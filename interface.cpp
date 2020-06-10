@@ -228,7 +228,7 @@ void Interface::initialViewTwoPlayer(){
 }
 void Interface::printNamePlayer1(string name){//ÏÔÊ¾Íæ¼Ò1Ãû×Ö
     SetConsoleTextAttribute(hOut,15);
-    gotoXY(8,0);                        
+    gotoXY(9,0);                        
     cout<<name<<endl;
      
 }
