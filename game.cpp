@@ -136,6 +136,16 @@ void Game::onePlayer(Player player) {
                 // d
                 player.rightMoveBlock();
             }
+            else if(key == 32) {
+                while(1) {
+                    if(_kbhit()) {
+                        int tempkey = _getch();
+                        if(tempkey == 32) {
+                            break;
+                        }
+                    }
+                }
+            }
             if(player.detectReductsion()) {
                 // «Â≥˝map«¯”Ú
                 itfs.clearMap1(player.map);
@@ -217,7 +227,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                     player1.detectIsFail();
                     if(player1.getStatus()) {
                         // ‰÷»æ ß∞‹“≥√Ê
-                        itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                        itfs.gameResult(player2.getName(), player2.getPoint(), 1);
                         return;
                     }
                     player1.makeNewBlock();
@@ -233,7 +243,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                     player2.detectIsFail();
                     if(player2.getStatus()) {
                         // ‰÷»æ ß∞‹“≥√Ê
-                        itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                        itfs.gameResult(player1.getName(), player1.getPoint(), 1);
                         return;
                     }
                     player2.makeNewBlock();
@@ -267,6 +277,16 @@ void Game::twoPlayers(Player player1, Player player2) {
             }
             else if(key == 77) {
                 player2.rightMoveBlock();
+            }
+            else if(key == 32) {
+                while(1) {
+                    if(_kbhit()) {
+                        int tempkey = _getch();
+                        if(tempkey == 32) {
+                            break;
+                        }
+                    }
+                }
             }
             int add1 = player1.detectReductsion();
             int add2 = player2.detectReductsion();
@@ -317,7 +337,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                 player1.detectIsFail();
                 if(player1.getStatus()) {
                     // ‰÷»æ ß∞‹“≥√Ê
-                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
                     return;
                 }
                 player1.makeNewBlock();
@@ -330,7 +350,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                 player2.detectIsFail();
                 if(player2.getStatus()) {
                     // ‰÷»æ ß∞‹“≥√Ê
-                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
                     return;
                 }
                 player2.makeNewBlock();
