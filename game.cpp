@@ -69,11 +69,6 @@ void Game::gameControl() {
 }
 
 int Game::selectGameType() {
-    // 方案1
-     /*int type;
-    cin >> type;
-    return type;*/
-    // 方案2
     // 渲染
     itfs.selectPart();
     itfs.selectKey1();

@@ -1,0 +1,1 @@
+g++ player.cpp main.cpp block.cpp interface.cpp game.cpp player.h block.h interface.h game.h -o ÎÒÂŞË¹·½¿é
