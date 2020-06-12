@@ -1,6 +1,7 @@
 #include"interface.h"
 #include<iostream>
-#include <conio.h>                  //┃■
+#include <conio.h>
+#include <windows.h>                  //┃■
 using namespace std;
 /*int Interface::vic[6][5]={ {0,0,1,0,0},
                 {0,1,1,1,0},
@@ -8,7 +9,9 @@ using namespace std;
                 {0,1,0,1,0},
                 {0,0,1,0,0},               
                 {0,0,1,0,0}};*/
-
+Interface::Interface(){ //获得输出句柄
+    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+}
 void Interface::initialWindow(){   
     system("cls");//清屏
     system("mode con cols=100 lines=30"); //设置窗口大小
@@ -428,7 +431,7 @@ void Interface::clearMap2(int map[20][10]){
         }
     }
 }
-void Interface::clearVictory1(){
+/*void Interface::clearVictory1(){
     for(int i=0;i<6;i++){
         gotoXY(26,22+i);
         for(int j=0;j<5;j++){
@@ -445,6 +448,6 @@ void Interface::clearVictory2(){
         }
     }
     
-}
+}*/
 
 

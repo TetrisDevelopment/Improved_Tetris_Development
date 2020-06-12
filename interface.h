@@ -1,4 +1,3 @@
-#include <windows.h>
 #include<string>
 #ifndef _BLOCK
 #include"block.h"
@@ -6,9 +5,7 @@
 using namespace std;
 class Interface {
 public:
-    Interface(){ //获得输出句柄
-       hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    }
+    Interface(); //获得输出句柄
     void initialWindow();//初始化窗口
     void initialCovor();//绘制初始封面
     void selectPart();//模式选择静态部分
@@ -37,9 +34,9 @@ public:
     void clearMap2(int map[20][10]);
     void printMap1(int map[20][10]);//打印map
     void printMap2(int map[20][10]);
-    void clearVictory1();//消除胜利标志
+    /*void clearVictory1();//消除胜利标志
     void clearVictory2();
-    static int vic[6][5];
+    static int vic[6][5];*/
 private:
     HANDLE hOut;
     Block tempBlock1,tempBlock2;
