@@ -1,7 +1,6 @@
 #include"interface.h"
 #include<iostream>
-#include <conio.h>
-#include <windows.h>                  //©§¡ö
+#include <conio.h>                 //©§¡ö
 using namespace std;
 /*int Interface::vic[6][5]={ {0,0,1,0,0},
                 {0,1,1,1,0},

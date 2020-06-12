@@ -1,4 +1,5 @@
 #include<string>
+#include <windows.h> 
 #ifndef _BLOCK
 #include"block.h"
 #endif
