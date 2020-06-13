@@ -371,7 +371,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                 itfs.refreshBlock1(player1.getX(), player1.getY(), player1.getNowBlock());
             }
             if(add2) {
-                if(player1.addBlock(add2)) {
+                if(!player1.addBlock(add2)) {
                     // ‰÷»æ ß∞‹
                     itfs.gameResult(player2.getName(), player2.getPoint(), 2);
                     return;

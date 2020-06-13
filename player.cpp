@@ -190,7 +190,6 @@ bool Player::addBlock(int num) {
             map[19][j] = 0;
         }
         // 底部随机增加
-         
         for(int j=0; j<10; j++) {
             map[19][rand()%10]++;
         }
