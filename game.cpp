@@ -222,7 +222,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                     player1.detectIsFail();
                     if(player1.getStatus()) {
                         // ‰÷»æ ß∞‹“≥√Ê
-                        itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                        itfs.gameResult(player2.getName(), player2.getPoint(), 2);
                         return;
                     }
                     player1.makeNewBlock();
@@ -238,7 +238,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                     player2.detectIsFail();
                     if(player2.getStatus()) {
                         // ‰÷»æ ß∞‹“≥√Ê
-                        itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                        itfs.gameResult(player1.getName(), player1.getPoint(), 2);
                         return;
                     }
                     player2.makeNewBlock();
@@ -289,7 +289,7 @@ void Game::twoPlayers(Player player1, Player player2) {
             if(add1) {
                 if(!player2.addBlock(add1)) {
                     //  ß∞‹‰÷»æ
-                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                    itfs.gameResult(player1.getName(), player1.getPoint(), 2);
                     return;
                 }
                 itfs.printPointPlayer1(player1.getPoint());
@@ -304,7 +304,7 @@ void Game::twoPlayers(Player player1, Player player2) {
             if(add2) {
                 if(!player1.addBlock(add2)) {
                     //  ß∞‹‰÷»æ
-                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                    itfs.gameResult(player2.getName(), player2.getPoint(), 2);
                     return;
                 }
                 itfs.printPointPlayer2(player2.getPoint());
@@ -332,7 +332,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                 player1.detectIsFail();
                 if(player1.getStatus()) {
                     // ‰÷»æ ß∞‹“≥√Ê
-                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                    itfs.gameResult(player2.getName(), player2.getPoint(), 2);
                     return;
                 }
                 player1.makeNewBlock();
@@ -345,7 +345,7 @@ void Game::twoPlayers(Player player1, Player player2) {
                 player2.detectIsFail();
                 if(player2.getStatus()) {
                     // ‰÷»æ ß∞‹“≥√Ê
-                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                    itfs.gameResult(player1.getName(), player1.getPoint(), 2);
                     return;
                 }
                 player2.makeNewBlock();
@@ -360,7 +360,7 @@ void Game::twoPlayers(Player player1, Player player2) {
             if(add1) {
                 if(!player2.addBlock(add1)) {
                     // ‰÷»æ ß∞‹
-                    itfs.gameResult(player1.getName(), player1.getPoint(), 1);
+                    itfs.gameResult(player1.getName(), player1.getPoint(), 2);
                     return;
                 }
                 itfs.printPointPlayer1(player1.getPoint());
@@ -373,7 +373,7 @@ void Game::twoPlayers(Player player1, Player player2) {
             if(add2) {
                 if(player1.addBlock(add2)) {
                     // ‰÷»æ ß∞‹
-                    itfs.gameResult(player2.getName(), player2.getPoint(), 1);
+                    itfs.gameResult(player2.getName(), player2.getPoint(), 2);
                     return;
                 }
                 itfs.printPointPlayer2(player2.getPoint());
